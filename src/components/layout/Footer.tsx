@@ -1,131 +1,79 @@
-import React from 'react';
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  CheckCircle2,
-} from 'lucide-react';
-import { footerNavigation } from '../../data/navigation';
-import { Link } from 'react-router';
-import { useTranslation } from 'react-i18next';
 
-const Footer: React.FC = () => {
-  const { t } = useTranslation('common');
-
-  const getSocialIcon = (label: string) => {
-    switch (label) {
-      case 'Facebook':
-        return <Facebook className="h-5 w-5" />;
-      case 'Twitter':
-        return <Twitter className="h-5 w-5" />;
-      case 'Instagram':
-        return <Instagram className="h-5 w-5" />;
-      case 'YouTube':
-        return <Youtube className="h-5 w-5" />;
-      default:
-        return null;
-    }
-  };
-
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 pt-12 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-slate-950 text-slate-200">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <div className="flex items-center mb-4">
-              <CheckCircle2 className="h-12 w-12 mr-3" />
-              {/* <img
-                src="/ph-logo.webp"
-                alt="Philippines Coat of Arms"
-                className="h-12 w-12 mr-3"
-              /> */}
-
-              <div>
-                <div className="font-bold">{t('site_name')}</div>
-                <div className="text-xs text-gray-400">BetterGov.ph Portal</div>
-              </div>
-            </div>
-            <p className="text-gray-400 text-sm mb-4">
-              A community portal providing Philippine citizens, businesses, and
-              visitors with information and services.
+            <h2 className="text-2xl font-bold text-white mb-3">
+              BetterCebu
+            </h2>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              An independent citizen-led transparency initiative
+              making public budgets, government projects,
+              elected officials, and local government information
+              accessible to every Cebuano.
             </p>
-            <div className="flex space-x-4">
-              {footerNavigation.socialLinks.map(link => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className="text-gray-400 hover:text-white transition-colors"
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-white mb-4">
+              Explore Public Information
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a
+                  href="https://cebu-city-budget-transparency.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:text-white underline-offset-4 hover:underline"
                 >
-                  {getSocialIcon(link.label)}
-                </Link>
-              ))}
-            </div>
+                  Cebu Budget Transparency
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://knowyourpoliticians.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white underline-offset-4 hover:underline"
+                >
+                  Know Your Politicians
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://bettergov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white underline-offset-4 hover:underline"
+                >
+                  BetterGov.ph
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {footerNavigation.mainSections.map(section => (
-            <div key={section.title}>
-              <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
-              <ul className="space-y-2">
-                {section.links.map(link => (
-                  <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      className="text-gray-400 hover:text-white text-sm transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div>
+            <h3 className="font-semibold text-white mb-4">
+              About BetterCebu
+            </h3>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              BetterCebu is an independent civic information
+              platform. It is not an official government website.
+              Public records should be checked against their
+              original sources.
+            </p>
+          </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              {t('footer.copyright')}
-            </p>
-            <div className="flex space-x-6">
-              {/* <a
-                href="/privacy"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Terms of Use
-              </a> */}
-              <Link
-                to="https://github.com/bettergovph/bettergov"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Contribute at GitHub
-              </Link>
-              <Link
-                to="/sitemap"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Sitemap
-              </Link>
-              <a
-                href="/accessibility"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Accessibility
-              </a>
-            </div>
-          </div>
+        <div className="border-t border-slate-700 mt-10 pt-6 text-sm text-slate-400 flex flex-col md:flex-row justify-between gap-3">
+          <span>BetterCebu | Citizen-led transparency</span>
+          <span>
+            Public information. Public accountability.
+          </span>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
