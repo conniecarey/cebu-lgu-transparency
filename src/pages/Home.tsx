@@ -1,5 +1,5 @@
+
 import Hero from '../components/sections/Hero';
-import ServicesSection from '../components/home/ServicesSection';
 import GovernmentActivitySection from '../components/home/GovernmentActivitySection';
 import SEO from '../components/SEO';
 
@@ -7,13 +7,13 @@ const Home: React.FC = () => {
   return (
     <>
       <SEO
-        title="Home"
-        description="Official website of your local government. Access government services, information, and resources."
-        keywords="government, local government, services, public services, civic services"
+        title="BetterCebu | Cebu Government Transparency"
+        description="BetterCebu is an independent citizen-led transparency initiative covering Cebu Province, its cities, municipalities, public officials, budgets, and public records."
+        keywords="BetterCebu, Cebu transparency, Cebu government, Cebu budgets, public officials, government accountability"
       />
+
       <main className="flex-grow">
         <Hero />
-        <ServicesSection />
         <GovernmentActivitySection />
       </main>
     </>
