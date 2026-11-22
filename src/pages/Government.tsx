@@ -181,9 +181,9 @@ function AlcantaraProfile() {
           appropriations and expenditures.
         </p>
 
-        <SourceLink href={budgetUrl}>
-          Open Cebu Budget Portal
-        </SourceLink>
+       <SourceLink href={`${budgetUrl}?q=Alcantara#projects`}>
+  View Alcantara Budget Records
+</SourceLink>
 
         <p className="text-xs text-amber-800 mt-2">
           Direct Alcantara filtering is not yet connected.
