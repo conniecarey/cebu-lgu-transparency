@@ -8,7 +8,7 @@ const municipalities = [
   "Carmen", "Catmon", "Compostela", "Consolacion",
   "Cordova", "Daanbantayan", "Dalaguete", "Dumanjug",
   "Ginatilan", "Liloan", "Madridejos", "Malabuyoc",
-  "Medellin", "Minglanilla", "Moalbo", "Oslob",
+  "Medellin", "Minglanilla", "Moalboal", "Oslob",
   "Pilar", "Pinamungajan", "Poro", "Ronda",
   "Samboan", "San Fernando", "San Francisco",
   "San Remigio", "Santa Fe", "Santander",
@@ -56,6 +56,255 @@ const budgetUrl =
 const politiciansUrl =
   "https://knowyourpoliticians.netlify.app/";
 
+const alcantaraSources = {
+  executive: "https://alcantara.com.ph/executive-department",
+  legislative: "https://alcantara.com.ph/legislative-department",
+  audit: "https://www.coa.gov.ph/wpfd_file/alcantara-compliance-audit-report-2025/",
+  municipality: "https://alcantara.com.ph/"
+};
+
+const alcantaraCouncilors = [
+  "Ragen Pantuan",
+  "Florencio Basilisco",
+  "Litoy Lambo",
+  "Tas Delima",
+  "Beatriz Caburnay",
+  "Joshua Catapusan",
+  "Jhulie Bayato",
+  "Artudio Lumapay",
+  "Augustina T. Odever"
+];
+
+function SourceLink({
+  href,
+  children
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block text-blue-700 font-semibold text-sm hover:underline"
+    >
+      {children} ↗
+    </a>
+  );
+}
+
+function AlcantaraProfile() {
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-6">
+      <div className="rounded-lg bg-blue-100 p-4">
+        <p className="text-xs font-bold uppercase tracking-wider text-blue-700">
+          First researched LGU
+        </p>
+        <h4 className="text-xl font-bold text-blue-950 mt-2">
+          Alcantara, Cebu
+        </h4>
+        <p className="text-sm text-slate-700 mt-2">
+          Municipality in Cebu's 7th Congressional District.
+          The information below links to official public records.
+        </p>
+        <div className="mt-3">
+          <SourceLink href={alcantaraSources.municipality}>
+            Official municipal website
+          </SourceLink>
+        </div>
+      </div>
+
+      <section>
+        <h4 className="font-bold text-blue-950 mb-3">
+          Elected Officials
+        </h4>
+        <p className="text-xs text-slate-500 mb-3">
+          Term: June 30, 2025 – June 30, 2028
+        </p>
+
+        <div className="bg-white rounded-lg border p-4 mb-3">
+          <p className="text-xs uppercase text-slate-500">
+            Municipal Mayor
+          </p>
+          <p className="font-bold text-slate-900">
+            Atty. Fritz A. Lastimoso
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg border p-4 mb-3">
+          <p className="text-xs uppercase text-slate-500">
+            Municipal Vice Mayor
+          </p>
+          <p className="font-bold text-slate-900">
+            Larry M. Llenos
+          </p>
+        </div>
+
+        <h5 className="font-semibold text-sm mb-2">
+          Municipal Council Members
+        </h5>
+
+        <ul className="text-sm text-slate-700 space-y-1 list-disc pl-5">
+          {alcantaraCouncilors.map(name => (
+            <li key={name}>{name}</li>
+          ))}
+        </ul>
+
+        <p className="text-sm text-slate-600 mt-3">
+          ABC President: Godofredo T. Tabanao
+        </p>
+
+        <p className="text-xs text-slate-500 mt-2">
+          Names follow the municipality's published
+          legislative directory. Roles and membership
+          should be rechecked when records change.
+        </p>
+
+        <div className="flex flex-col gap-2 mt-3">
+          <SourceLink href={alcantaraSources.executive}>
+            Official executive directory
+          </SourceLink>
+          <SourceLink href={alcantaraSources.legislative}>
+            Official legislative directory
+          </SourceLink>
+        </div>
+      </section>
+
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">
+          Budgets and Allocations
+        </h4>
+        <p className="text-sm text-slate-600 mb-3">
+          Explore available Cebu budget records. We are
+          still validating Alcantara-specific allocations,
+          appropriations and expenditures.
+        </p>
+
+        <SourceLink href={budgetUrl}>
+          Open Cebu Budget Portal
+        </SourceLink>
+
+        <p className="text-xs text-amber-800 mt-2">
+          Direct Alcantara filtering is not yet connected.
+          Budget proposals are not proof of actual spending.
+        </p>
+      </section>
+
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">
+          Government Projects
+        </h4>
+        <p className="text-sm text-slate-600">
+          We are compiling project titles, locations,
+          appropriations, contractors, implementation
+          status and official sources. No unverified
+          project amounts are displayed.
+        </p>
+      </section>
+
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">
+          COA Audit and Public Documents
+        </h4>
+
+        <div className="bg-white rounded-lg border p-4">
+          <p className="text-xs font-semibold uppercase text-blue-700">
+            Official Audit Record
+          </p>
+          <h5 className="font-bold mt-2">
+            2025 Compliance Audit Report
+          </h5>
+          <p className="text-sm text-slate-600 my-3">
+            Commission on Audit review concerning the
+            municipality's Local Disaster Risk Reduction
+            and Management Fund allocation and alignment
+            of investment and financial plans.
+          </p>
+          <SourceLink href={alcantaraSources.audit}>
+            Read COA report
+          </SourceLink>
+        </div>
+
+        <p className="text-xs text-slate-500 mt-3">
+          Listing an audit does not imply an adverse
+          finding. Conclusions must be based on the
+          report's actual contents.
+        </p>
+      </section>
+
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+        <p className="text-xs font-semibold text-amber-900">
+          Research status: In progress
+        </p>
+        <p className="text-xs text-amber-900 mt-2">
+          Officials and document links are sourced.
+          Municipal budget figures, project outcomes
+          and other accountability indicators still
+          require verification. BetterCebu is independent
+          and is not an official government website.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function PendingProfile({ name }: { name: string }) {
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-5">
+      <div>
+        <h4 className="font-bold text-blue-950">
+          Public Officials
+        </h4>
+        <p className="text-sm text-slate-600 mt-2">
+          Verified officials and terms will be added
+          when source records are available.
+        </p>
+        <SourceLink href={politiciansUrl}>
+          Research public officials
+        </SourceLink>
+      </div>
+
+      <div>
+        <h4 className="font-bold text-blue-950">
+          Budgets and Allocations
+        </h4>
+        <p className="text-sm text-slate-600 mt-2">
+          LGU-specific budget data is pending verification.
+        </p>
+        <SourceLink href={budgetUrl}>
+          Explore Cebu budget records
+        </SourceLink>
+      </div>
+
+      <div>
+        <h4 className="font-bold text-blue-950">
+          Government Projects
+        </h4>
+        <p className="text-sm text-slate-600 mt-2">
+          Project records have not yet been researched.
+        </p>
+      </div>
+
+      <div>
+        <h4 className="font-bold text-blue-950">
+          Public Documents
+        </h4>
+        <p className="text-sm text-slate-600 mt-2">
+          Official documents will be linked when verified.
+        </p>
+      </div>
+
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+        <p className="text-xs text-amber-900">
+          Research pending for {name}. Missing records
+          do not indicate wrongdoing.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function Government() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
@@ -72,10 +321,6 @@ export default function Government() {
     return matchesSearch && matchesFilter;
   });
 
-  const toggleLGU = (name: string) => {
-    setOpenLGU(current => current === name ? null : name);
-  };
-
   return (
     <main className="min-h-screen bg-slate-50">
       <section className="bg-blue-950 text-white py-16">
@@ -83,16 +328,14 @@ export default function Government() {
           <p className="text-blue-300 text-sm uppercase tracking-widest mb-3">
             BetterCebu / Government Directory
           </p>
-
           <h1 className="text-4xl md:text-5xl font-bold mb-5">
             Find Your Government
           </h1>
-
           <p className="text-lg text-blue-100 max-w-3xl">
-            Explore Cebu's local governments, public officials,
-            budgets, projects, and transparency records.
-            BetterCebu is an independent citizen-led initiative,
-            not an official government website.
+            Explore Cebu's local governments, officials,
+            budgets, projects and public records.
+            Independent civic information, not an
+            official government website.
           </p>
         </div>
       </section>
@@ -129,7 +372,7 @@ export default function Government() {
               type="search"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              placeholder="Search Cebu City, Argao, Danao..."
+              placeholder="Search Cebu City, Alcantara, Argao..."
               aria-label="Search local governments"
               className="border rounded-lg px-4 py-3 flex-1"
             />
@@ -157,6 +400,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
+            const isResearched = lgu.name === "Alcantara";
 
             return (
               <article
@@ -165,7 +409,11 @@ export default function Government() {
               >
                 <button
                   type="button"
-                  onClick={() => toggleLGU(lgu.name)}
+                  onClick={() =>
+                    setOpenLGU(current =>
+                      current === lgu.name ? null : lgu.name
+                    )
+                  }
                   aria-expanded={isOpen}
                   className="w-full text-left p-6 hover:bg-blue-50 transition"
                 >
@@ -177,16 +425,21 @@ export default function Government() {
                     <h3 className="text-xl font-bold text-slate-900">
                       {lgu.name}
                     </h3>
-
                     <span className="text-2xl text-blue-700">
                       {isOpen ? "−" : "+"}
                     </span>
                   </div>
 
+                  {isResearched && (
+                    <span className="inline-block mt-3 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full px-3 py-1">
+                      Research in progress
+                    </span>
+                  )}
+
                   <p className="text-sm text-slate-500 mt-3">
-                    {isOpen
-                      ? "Click to close this LGU profile."
-                      : "Click to explore this LGU's information."}
+                    {isResearched
+                      ? "Official records and sources available."
+                      : "Local profile awaiting research."}
                   </p>
 
                   <span className="inline-block text-blue-700 font-semibold mt-5">
@@ -195,79 +448,9 @@ export default function Government() {
                 </button>
 
                 {isOpen && (
-                  <div className="border-t bg-slate-50 p-6 space-y-6">
-                    <div>
-                      <h4 className="font-bold text-blue-950 mb-2">
-                        Public Officials
-                      </h4>
-                      <p className="text-sm text-slate-600">
-                        Verified local officials and their
-                        terms of office will be added as
-                        source records become available.
-                      </p>
-                      <a
-                        href={politiciansUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-blue-700 font-semibold hover:underline"
-                      >
-                        Research public officials →
-                      </a>
-                    </div>
-
-                    <div>
-                      <h4 className="font-bold text-blue-950 mb-2">
-                        Budgets and Allocations
-                      </h4>
-                      <p className="text-sm text-slate-600">
-                        Explore available Cebu budget data.
-                        Proposed allocations are not
-                        necessarily enacted or disbursed.
-                      </p>
-                      <a
-                        href={budgetUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-blue-700 font-semibold hover:underline"
-                      >
-                        View budget records →
-                      </a>
-                    </div>
-
-                    <div>
-                      <h4 className="font-bold text-blue-950 mb-2">
-                        Government Projects
-                      </h4>
-                      <p className="text-sm text-slate-600">
-                        LGU-specific project records have
-                        not yet been independently verified.
-                        A project's location does not
-                        establish who sponsored it.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className="font-bold text-blue-950 mb-2">
-                        Public Documents
-                      </h4>
-                      <p className="text-sm text-slate-600">
-                        Official resolutions, ordinances,
-                        financial reports, procurement
-                        records, and audit documents will
-                        be linked when verified.
-                      </p>
-                    </div>
-
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                      <p className="text-xs text-amber-900">
-                        Research status: This profile is
-                        a directory entry, not a completed
-                        assessment of {lgu.name}.
-                        Missing information should not be
-                        interpreted as evidence of wrongdoing.
-                      </p>
-                    </div>
-                  </div>
+                  isResearched
+                    ? <AlcantaraProfile />
+                    : <PendingProfile name={lgu.name} />
                 )}
               </article>
             );
@@ -284,12 +467,11 @@ export default function Government() {
           <h2 className="text-2xl font-bold text-blue-950 mb-3">
             Follow Public Money
           </h2>
-
           <p className="text-slate-700 mb-6">
-            Examine available project allocations and compare
-            proposed budgets with House bill amounts.
-            A project appearing in a district does not establish
-            that its representative personally sponsored it.
+            Examine available Cebu budget and project
+            records. Proposed allocations must be
+            distinguished from enacted appropriations
+            and actual expenditures.
           </p>
 
           <div className="flex flex-wrap gap-4">
