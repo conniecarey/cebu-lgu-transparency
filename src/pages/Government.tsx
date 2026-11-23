@@ -298,6 +298,23 @@ function PendingProfile({ name }: { name: string }) {
         </p>
       </div>
 
+<div>
+  <h4 className="font-bold text-blue-950">
+    COA Audit Reports
+  </h4>
+
+  <p className="text-sm text-slate-600 mt-2">
+    Audit reports and findings for {name} are
+    pending verification. The absence of a
+    published report here does not indicate
+    that an LGU has no audit findings.
+  </p>
+
+  <SourceLink href="https://www.coa.gov.ph/">
+    Visit the Commission on Audit
+  </SourceLink>
+</div>
+
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
         <p className="text-xs text-amber-900">
           Research pending for {name}. Missing records
