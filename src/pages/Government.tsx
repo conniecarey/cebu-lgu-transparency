@@ -273,9 +273,11 @@ function PendingProfile({ name }: { name: string }) {
         <p className="text-sm text-slate-600 mt-2">
           LGU-specific budget data is pending verification.
         </p>
-        <SourceLink href={budgetUrl}>
-          Explore Cebu budget records
-        </SourceLink>
+        
+<SourceLink href={`${budgetUrl}?q=${encodeURIComponent(name)}#projects`}>
+  View Budget Records for {name}
+</SourceLink>
+
       </div>
 
       <div>
