@@ -186,8 +186,9 @@ function AlcantaraProfile() {
 </SourceLink>
 
         <p className="text-xs text-amber-800 mt-2">
-          Direct Alcantara filtering is not yet connected.
-          Budget proposals are not proof of actual spending.
+          
+The link opens budget records matching Alcantara. Results are based on available project descriptions and may not represent all municipal allocations or actual expenditures.
+
         </p>
       </section>
 
