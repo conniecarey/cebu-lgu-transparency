@@ -156,6 +156,25 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://congress.gov.ph/legislative-documents/committee-daily-bulletin/document/1948" target="_blank" rel="noopener noreferrer">House committee bulletin</a>
  <a className="block text-blue-700 underline" href="https://cpbrd.congress.gov.ph/wp-content/uploads/2026/04/CSP-65-STATISTICAL-INVENTORY-OF-POTENTIAL-POLITICAL-DYNASTS.pdf" target="_blank" rel="noopener noreferrer">Congressional policy research inventory — page 92</a>
  </div>
+ ) : area === 'Cebu City' && district === '1st District' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">161 principal-authored bills listed</p><p>House profile snapshot, November 25, 2026. Shared authorship may be included; this is not an enacted-law count.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HB 258:</strong> Proposed Mega Cebu Development Authority; referred to committee July 29, 2025.</li>
+ <li><strong>HB 259 → HB 9397:</strong> Strengthening public access to information; original bill substituted.</li>
+ <li><strong>HB 336 and HB 337:</strong> Proposals to name a road and the Cebu-Cordova Link Expressway after Raul V. Del Mar; referred to Public Works and Highways July 29, 2025.</li>
+ <li><strong>HB 338 → HB 11709:</strong> Proposed regular CNU campus in central Cebu City; substitute listed with Rules for November 9, 2026.</li>
+ <li><strong>HB 339 → HB 6904:</strong> Exodus Broadcasting franchise renewal; House agreed to Senate amendments October 12, 2026. Final enactment not established here.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Attendance and committee records</h3><p>The Freeman reported perfect plenary attendance during the first regular session of the 20th Congress on September 1, 2026. Attendance does not measure legislative outcomes.</p><p>The eCongress committee listing includes Appropriations, Basic Education and Culture, Good Government and Public Accountability, Women and Gender Equality, Dangerous Drugs, Economic Affairs and Energy. Current assignments require confirmation.</p>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3><ul className="list-disc pl-5 space-y-1"><li>How would the proposed Mega Cebu authority coordinate existing LGUs and disclose its budgets and decisions?</li><li>What enforceable disclosure requirements would the information-access bill establish?</li><li>What funding and implementation milestones exist for the proposed university campus?</li><li>What public consultation and costs accompany the proposed naming measures?</li></ul>
+ <p>Individual roll-call votes, political family history, enacted-law totals and actual district expenditures remain under verification.</p>
+ <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/house-members/view/G031" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
+ <a className="block text-blue-700 underline" href="https://congress.gov.ph/legislative-documents" target="_blank" rel="noopener noreferrer">Official legislative records</a>
+ <a className="block text-blue-700 underline" href="https://econgress.gov.ph/all-representatives/?id=88&amp;views=committees" target="_blank" rel="noopener noreferrer">eCongress committee listing</a>
+ <a className="block text-blue-700 underline" href="https://www.philstar.com/the-freeman/cebu-news/2026/09/01/2553220/lolypop-cutie-girlie-post-perfect-house-attendance" target="_blank" rel="noopener noreferrer">The Freeman — attendance report</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
