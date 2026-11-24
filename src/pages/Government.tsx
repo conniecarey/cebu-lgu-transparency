@@ -584,6 +584,18 @@ function BantayanProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Which development projects were delayed?</li><li>What are their revised completion dates?</li><li>How much of the unspent balance has since been utilized?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit observations do not establish criminal wrongdoing.</div></div>;
 }
 
+function BariliProfile() {
+ const history = [["2025","Pablo John Garcia IV","Luisito Ponsica"],["2022","Pablo John Garcia IV","Luisito Ponsica"],["2019","Marlon Garcia","Julieto Flores"],["2016","Marlon Garcia","Teresito Mariñas"],["2013","Teresito Mariñas","Jose Antonio Nemeño"],["2010","Teresito Mariñas","Marlon Garcia"],["2007","Teresito Mariñas","Ramon Ewican"],["2004","Robert Alquizola","Jose Antonio Nemeño"],["2001","Robert Alquizola","Luisito Ponsica"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Barili, Cebu</h4><p className="text-sm mt-2">3rd Congressional District · 42 barangays · 80,715 residents (2020 census) · 58,511 registered voters (2025)</p><SourceLink href="https://www.cebu.gov.ph/vice-governor-sangguniang-panlalawigan/">Provincial government directory</SourceLink></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Elected Officials</h4><p className="text-sm">2025–2028 term</p><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Pablo John Domingo Garcia IV</p></div><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Luisito Lariosa Ponsica</p></div><h5 className="font-semibold">Eight leading council candidates in reported 2025 results</h5><ul className="list-disc pl-5 text-sm space-y-1">{["Jayra Jay Ruiz — 36,990","Bobet Alquizola — 29,314","Joshua Ricardel — 28,399","John-John Añober — 27,981","Shelomith Ann Ewican — 25,701","Teresito Mariñas — 25,340","Gemco Gabales — 23,975","Andres Alpas — 20,540"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-xs text-slate-600">Reported election returns, not certified proclamation records.</p><div><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/barili">Election results</SourceLink></div><SourceLink href="https://peoplaid.com/2025/05/10/barili-election-2025-results-winners/">Council election returns</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Barili#projects`}>View Barili Budget Records</SourceLink><p className="text-xs text-slate-600">Project matches are not necessarily complete allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><p className="text-xs">Family relationships are not inferred from surnames. Midterm succession may differ from election records.</p><SourceLink href="https://scene.ph/atlas/cebu/barili">Historical leadership records</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><p className="text-sm">SunStar reported on July 18, 2023 that COA questioned the accounting of approximately PHP 343 million in property, plant and equipment in the 2022 audit, including incomplete inventories and unreliable road records. This represents recorded assets, not established losses. Subsequent resolution has not been verified.</p><div><SourceLink href="https://www.sunstar.com.ph/amp/story/cebu/local-news/coa-barilis-record-of-p343m-property-equipment-doubtful">2022 audit reporting</SourceLink></div><SourceLink href="https://www.coa.gov.ph/wpfd_file/barili-annual-audit-report-2025/">Official 2025 COA Annual Audit Report</SourceLink><h5 className="font-semibold">Bulk water project</h5><p className="text-sm">SunStar reported in November 2026 that the completed Cluster B project faced delays in obtaining a water permit involving land-use arrangements. The PHP 822 million cited in the report covers 15 projects province-wide, not Barili alone.</p><SourceLink href="https://www.sunstar.com.ph/cebu/15-waterworks-idle">Water project audit reporting</SourceLink></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Have the infrastructure asset inventories been reconciled?</li><li>What is the status of the Cluster B water permit?</li><li>What corrective actions resolved the 2022 audit observations?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit observations do not establish criminal wrongdoing.</div></div>;
+}
+
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -754,7 +766,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili";
 
             return (
               <article
@@ -820,6 +832,8 @@ export default function Government() {
                     ? <BalambanProfile />
                     : lgu.name === "Bantayan"
                     ? <BantayanProfile />
+                    : lgu.name === "Barili"
+                    ? <BariliProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
