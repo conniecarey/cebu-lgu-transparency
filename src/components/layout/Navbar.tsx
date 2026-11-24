@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router';
 
 export default function Navbar() {
@@ -35,9 +34,6 @@ export default function Navbar() {
           </Link>
           <Link to="/government" className="text-blue-900 hover:text-blue-600">
             Government
-          </Link>
-          <Link to="/services" className="text-blue-900 hover:text-blue-600">
-            Services
           </Link>
           <a
             href="https://cebu-city-budget-transparency.netlify.app/"
