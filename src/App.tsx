@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Services from './pages/Services';
 import Document from './pages/Document';
+import Government from './pages/Government';
 import Congress from './pages/Congress';
 import Search from './pages/Search';
 import { isMeilisearchEnabled } from './lib/meilisearch';
