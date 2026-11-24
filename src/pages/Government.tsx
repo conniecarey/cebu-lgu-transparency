@@ -349,6 +349,64 @@ function AlegriaProfile() {
   );
 }
 
+function AloguinsanProfile() {
+  const elected = ["Onad Paras", "Malou Chua", "Michael Pabroa", "Sinoy Manigos", "Cepen Concon", "Jojo Nieves", "JR Laña", "Roy Manguilimotan"];
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-6">
+      <div className="rounded-lg bg-blue-100 p-4">
+        <h4 className="text-xl font-bold text-blue-950">Aloguinsan, Cebu</h4>
+        <p className="text-sm text-slate-700 mt-2">3rd Congressional District · 15 barangays</p>
+        <SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/aloguinsan">Municipal profile and election results</SourceLink>
+      </div>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-3">Elected Officials</h4>
+        <p className="text-xs text-slate-500 mb-3">2025–2028 electoral term</p>
+        {[["Municipal Mayor", "Cesare Ignatius Go Moreno"], ["Municipal Vice Mayor", "Christian Go Moreno"]].map(([role, name]) => (
+          <div key={role} className="bg-white rounded-lg border p-4 mb-3"><p className="text-xs uppercase text-slate-500">{role}</p><p className="font-bold text-slate-900">{name}</p></div>
+        ))}
+        <h5 className="font-semibold text-sm mb-2">2025 election results — leading council candidates</h5>
+        <ul className="text-sm text-slate-700 list-disc pl-5">{elected.map(name => <li key={name}>{name}</li>)}</ul>
+        <SourceLink href="https://peoplaid.com/2025/05/10/aloguinsan-election-2025-results-winners/">2025 election results</SourceLink>
+        <p className="text-sm text-slate-700 mt-3">The council list reflects the 2025 election results, not a confirmed current roster.</p>
+        <SourceLink href="https://www.cebu.gov.ph/vice-governor-sangguniang-panlalawigan/">Official provincial directory</SourceLink>
+      </section>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">Budgets and Government Projects</h4>
+        <SourceLink href={`${budgetUrl}?q=Aloguinsan#projects`}>View Aloguinsan Budget Records</SourceLink>
+        <p className="text-xs text-slate-500 mt-2">Project allocations are not necessarily actual expenditures or completed projects.</p>
+      </section>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">COA Audit and Public Documents</h4>
+        <div className="bg-white border rounded-lg p-4 mb-3">
+          <h5 className="font-bold">2025 Compliance Audit</h5>
+          <p className="text-sm text-slate-600 my-2">Review of disaster risk reduction fund allocations and alignment of investment and financial plans for 2025.</p>
+          <SourceLink href="https://www.coa.gov.ph/wpfd_file/aloguinsan-compliance-audit-report-2025/">Official COA report</SourceLink>
+        </div>
+        <div className="bg-white border rounded-lg p-4 mb-3">
+          <h5 className="font-bold">2025 Annual Audit Report</h5>
+          <SourceLink href="https://www.coa.gov.ph/wpfd_file/aloguinsan-annual-audit-report-2025/">Official COA annual audit report</SourceLink>
+        </div>
+        <div className="bg-white border rounded-lg p-4 mb-3">
+          <h5 className="font-bold">2024 audit observations — reported December 17, 2025</h5>
+          <ul className="text-sm text-slate-700 list-disc pl-5 space-y-2 my-3">
+            <li>₱12.24 million in cash advances outstanding for 10–21 years; management reported issuing demand letters.</li>
+            <li>₱7,747,386.68 in undisbursed national support funds at year-end 2024; management agreed to seek an extension and return unused balances from completed projects.</li>
+            <li>Development fund absorptive capacity: 36.32%; 28 of 43 planned projects completed (65.12%). Management cited land, documentation and technical issues.</li>
+            <li>Unequal pay for job-order workers performing identical functions; HR reported drafting wage guidelines. There were 124 job-order workers at year-end.</li>
+            <li>₱26.43 million received in 2023 for school buildings in Bonbon and Punay and solar streetlights in Rosario and Poblacion. Streetlights were completed; school buildings were reported ongoing at the time of coverage.</li>
+          </ul>
+          <SourceLink href="https://qa.philstar.com/the-freeman/cebu-news/2025/12/17/2494929/aloguinsan-called-out-wage-disparities-unused-funds-unliquidated-cash/amp">The Freeman, December 17, 2025</SourceLink>
+        </div>
+        <p className="text-xs text-slate-500">Media summaries are secondary sources. Audit observations do not establish criminal guilt; historical findings may have been resolved.</p>
+      </section>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">Public Accountability Questions</h4>
+        <ul className="text-sm text-slate-700 list-disc pl-5 space-y-2"><li>How much of the outstanding cash advances has been recovered or liquidated?</li><li>Which audit recommendations have been implemented, and have the school buildings been completed?</li><li>Where are the current municipal budget, procurement awards and project completion reports published?</li></ul>
+      </section>
+    </div>
+  );
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -519,7 +577,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan";
 
             return (
               <article
@@ -573,6 +631,8 @@ export default function Government() {
                     ? <AlcoyProfile />
                     : lgu.name === "Alegria"
                     ? <AlegriaProfile />
+                    : lgu.name === "Aloguinsan"
+                    ? <AloguinsanProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
