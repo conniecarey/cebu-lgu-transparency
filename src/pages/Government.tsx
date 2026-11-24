@@ -630,6 +630,17 @@ function CarmenProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Has the CCTV inventory reconciliation been submitted to COA?</li><li>What documentation confirms restoration of all cameras and warranty enforcement?</li><li>Have completion records been corrected?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Contract values are not established losses; audit observations are not criminal convictions.</div></div>;
 }
 
+function CatmonProfile() {
+ const history = [["2025","Avis Ginoo-Monleon","Armel Poro"],["2022","Avis Ginoo-Monleon","Armel Poro"],["2019","Iris Baylon-Gestopa","Earl Oyas"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Catmon, Cebu</h4><p className="text-sm mt-2">5th Congressional District · 20 barangays · 34,608 residents (2024 census) · 22,551 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Avis Ginoo-Monleon</p><p className="text-sm">13,080 reported votes in 2025.</p></div><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Armel Zapanta Poro</p></div><p className="text-xs">Directory as of February 2026; elected term 2025–2028.</p><h5 className="font-semibold">Eight leading council candidates in 2025 reported returns</h5><ul className="list-disc pl-5 text-sm">{["Atty. Juban — 16,016","Buena Pontillas — 13,672","Estrella Aribal — 10,975","Jurasec Coloscos — 10,718","Jose Barte — 9,603","Raul Sususco — 8,669","Faith Baylon — 8,439","Andres Arche Jr. — 8,114"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-xs">Unofficial returns with 100% of precincts reporting on May 15, 2025.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/catmon">Election results</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Catmon#projects`}>View Catmon Budget Records</SourceLink><p className="text-xs">Project matches may not represent all allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor elected</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><SourceLink href="https://scene.ph/atlas/cebu/catmon">Historical leadership and official directory compilation</SourceLink><p className="text-sm">Monleon and Poro won the 2022 and 2025 elections. Family connections are not asserted without documentation.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><div className="bg-white rounded-lg border p-4"><h5 className="font-bold">2025 municipal finances</h5><p className="text-sm mt-2">Reported income: PHP 208.7 million; spending: PHP 131.2 million. National Tax Allotment accounted for 87.9% of income. PSA poverty incidence was 35.4% in 2021. These figures are from a secondary compilation of public records.</p><SourceLink href="https://scene.ph/atlas/cebu/catmon">Financial and socioeconomic records</SourceLink></div><SourceLink href="https://www.coa.gov.ph/wpfd_file/catmon-compliance-audit-report-2025/">2025 COA compliance audit — disaster risk reduction funds</SourceLink></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>How were disaster risk reduction funds allocated and used?</li><li>Which development projects were funded and completed?</li><li>What measures are being taken to reduce poverty and expand local revenues?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Contract values are not established losses; audit observations are not criminal convictions.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -800,7 +811,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon";
 
             return (
               <article
@@ -874,6 +885,8 @@ export default function Government() {
                     ? <BorbonProfile />
                     : lgu.name === "Carmen"
                     ? <CarmenProfile />
+                    : lgu.name === "Catmon"
+                    ? <CatmonProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
