@@ -506,6 +506,58 @@ function AsturiasProfile() {
   );
 }
 
+function BadianProfile() {
+  const history = [
+    ["2025", "Jerome Librando", "Doris Silvano"], ["2022", "Carmencita Lumain", "Doris Silvano"],
+    ["2019", "Carmencita Lumain", "Fructuoso Caballero"], ["2016", "Carmencita Lumain", "Fructuoso Caballero"],
+    ["2013", "Robburt Librando", "Jerome Librando"], ["2010", "Robburt Librando", "Fructuoso Caballero"],
+    ["2007", "Carmencita Lumain", "Fructuoso Caballero"], ["2004", "Carmencita Lumain", "Fructuoso Caballero"],
+    ["2001", "Carmencita Lumain", "Solomon Virtucio"]
+  ];
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-6">
+      <div className="rounded-lg bg-blue-100 p-4">
+        <h4 className="text-xl font-bold text-blue-950">Badian, Cebu</h4>
+        <p className="text-sm mt-2">7th Congressional District · 29 barangays · 43,735 residents (2020 census) · 29,459 registered voters (2025)</p>
+        <SourceLink href="https://scene.ph/atlas/cebu/badian">Municipal profile and source references</SourceLink>
+      </div>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Elected Officials</h4>
+        <p className="text-sm">2025–2028 term. DILG directory compiled by Scene.ph and 2025 election records.</p>
+        <div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Jerome Christian Visitacion Librando</p></div>
+        <div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Doris Miñoza Silvano</p></div>
+        <h5 className="font-semibold">Municipal council — eight leading candidates in reported 2025 results</h5>
+        <ul className="list-disc pl-5 text-sm space-y-1">{["Michelle Bitangga — 13,300", "Carmencita Lumain — 13,126", "Maricar Lumain — 11,391", "Joseph Balbona — 10,707", "Kyrene Vesta Tabanao — 9,791", "Marites Gramatica — 9,445", "Julius Agravante — 9,366", "Jim Amarado — 8,816"].map(n => <li key={n}>{n}</li>)}</ul>
+        <p className="text-xs text-slate-600">Partial unofficial results, 97.73% of precincts reporting as of May 15, 2025. Final proclamation and subsequent changes should be checked.</p>
+        <div><SourceLink href="https://www.comelec.gov.ph/php-tpls-attachments/2025NLE/COC_2025NLE/CLC2025_R7/Cebu_BADIAN.pdf">Official COMELEC candidate list</SourceLink></div>
+        <div><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/badian">2025 election results</SourceLink></div>
+        <div><SourceLink href="https://peoplaid.com/2025/05/10/badian-election-2025-results-winners/">Council directory (secondary source)</SourceLink></div>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Budgets and Government Projects</h4>
+        <SourceLink href={`${budgetUrl}?q=Badian#projects`}>View Badian Budget Records</SourceLink>
+        <p className="text-xs text-slate-600">Matching project records do not necessarily represent all municipal allocations or actual spending.</p>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4>
+        <div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div>
+        <p className="text-xs text-slate-600">Election records may not reflect midterm succession. The surnames Lumain and Librando recur in leadership records, but shared surnames do not establish family relationships.</p>
+        <SourceLink href="https://scene.ph/atlas/cebu/badian">Historical leadership and source references</SourceLink>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4>
+        <p className="text-sm">2024 compliance audit on transparency and accountability in Special Education Fund allocation and utilization. Listing this report does not imply an adverse finding.</p>
+        <SourceLink href="https://www.coa.gov.ph/wpfd_file/badian-compliance-audit-report-2024/">Read official COA report</SourceLink>
+        <div><SourceLink href="https://www.coa.gov.ph/wpfd_file/badian-annual-audit-report-2022/">2022 annual audit</SourceLink></div>
+        <p className="text-sm">The Freeman reported on June 30, 2021 that COA questioned PHP 3.92 million in 2020 emergency assistance to 653 beneficiaries assessed as ineligible, out of PHP 22.68 million received. Auditors requested documentation and recovery measures. Subsequent resolution is not established here.</p>
+        <SourceLink href="https://www.philstar.com/the-freeman/cebu-news/2021/06/30/2109171/coa-wants-ineligible-sap-beneficiaries-refund-aid">Historical audit reporting</SourceLink>
+      </section>
+      <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm space-y-1"><li>What actions followed the 2024 education fund audit and the historical emergency assistance observations?</li><li>Where are project expenditure, contractor and completion records published?</li><li>Where can residents access current council membership and municipal financial reports?</li></ul></section>
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Historical audit observations are not proof of criminal wrongdoing. Family relationships are not inferred from surnames.</div>
+    </div>
+  );
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -676,7 +728,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian";
 
             return (
               <article
@@ -736,6 +788,8 @@ export default function Government() {
                     ? <ArgaoProfile />
                     : lgu.name === "Asturias"
                     ? <AsturiasProfile />
+                    : lgu.name === "Badian"
+                    ? <BadianProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
