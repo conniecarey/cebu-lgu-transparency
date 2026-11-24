@@ -619,6 +619,17 @@ function BorbonProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Were the road deficiencies rectified or the amount recovered?</li><li>What is the updated municipal council roster?</li><li>What safeguards govern consultancy contracts involving relatives?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Administrative findings and audit observations are not criminal convictions.</div></div>;
 }
 
+function CarmenProfile() {
+ const history = [["2025","Carlo Villamor","Martin Gerard Villamor"],["2022","Carlo Villamor","Martin Gerard Villamor"],["2019","Carlo Villamor","Al Damiles"],["2016","Martin Gerard Villamor","Manuel Mari Durano"],["2013","Martin Gerard Villamor","Al Damiles"],["2010","Martin Gerard Villamor","Al Damiles"],["2007","Virginio Villamor","Sonia Pua"],["2004","Virginio Villamor","Al Damiles"],["2001","Amytis Batao","Virginio Villamor"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Carmen, Cebu</h4><p className="text-sm mt-2">5th Congressional District · 21 barangays · 57,897 residents (2020 census) · 40,904 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Carlo Teves Villamor</p><p className="text-sm">Unopposed in 2025; 28,212 reported votes.</p></div><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Martin Gerard Teves Villamor</p></div><p className="text-xs">Directory as of February 2026; elected term 2025–2028.</p><h5 className="font-semibold">Eight leading council candidates in 2025 reported returns</h5><ul className="list-disc pl-5 text-sm">{["Al Damiles — 26,971","Kyle Pono — 25,462","Tata Tacocong — 24,661","Tony Awing — 23,953","Rashid Tacocong — 23,386","Arianne Batao-Pono — 21,894","Richard Sarad — 17,980","Jer-Jer Into — 16,783"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-xs">Unofficial returns with 100% of precincts reporting on May 15, 2025.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/carmen">Election results</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Carmen#projects`}>View Carmen Budget Records</SourceLink><p className="text-xs">Project matches may not represent all allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor elected</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><SourceLink href="https://scene.ph/atlas/cebu/carmen">Historical leadership and official directory compilation</SourceLink><p className="text-sm">Eight consecutive mayoral elections since 2004 were won by candidates surnamed Villamor. Exact family relationships have not been independently verified.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><div className="bg-white rounded-lg border p-4"><h5 className="font-bold">CCTV Phase II — PHP 7,115,694.42 contract</h5><p className="text-sm mt-2">SunStar reported on October 16, 2026 that auditors found 22 of 65 cameras nonfunctional during the February 13, 2026 inspection. Five units could not initially be verified. COA questioned completion records and final acceptance, including warranty implications.</p><p className="text-sm mt-2">The engineering office attributed damage to a typhoon, acknowledged administrative discrepancies, and reported that all 65 units had been restored under warranty. Inventory reconciliation was ongoing. Independent verification of the final resolution is not established here.</p><SourceLink href="https://www.sunstar.com.ph/cebu/coa-flags-carmens-acceptance-of-defective-cctv-cameras">Read audit reporting and municipal response</SourceLink></div><SourceLink href="https://www.coa.gov.ph/wpfd_file/carmen-compliance-audit-report-2023-3/">2023 COA compliance audit — disaster risk reduction funds</SourceLink></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Has the CCTV inventory reconciliation been submitted to COA?</li><li>What documentation confirms restoration of all cameras and warranty enforcement?</li><li>Have completion records been corrected?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Contract values are not established losses; audit observations are not criminal convictions.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -789,7 +800,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen";
 
             return (
               <article
@@ -861,6 +872,8 @@ export default function Government() {
                     ? <BoljoonProfile />
                     : lgu.name === "Borbon"
                     ? <BorbonProfile />
+                    : lgu.name === "Carmen"
+                    ? <CarmenProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
