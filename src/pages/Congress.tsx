@@ -64,6 +64,23 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://econgress.gov.ph/house-members/?id=118&amp;views=authoredbills" target="_blank" rel="noopener noreferrer">Previous congressional records</a>
  <a className="block text-blue-700 underline" href="https://bills.juris.ph/authors?author=GALEOS%2C+EDSEL+A." target="_blank" rel="noopener noreferrer">BatasWatch captured legislative records — secondary source</a>
  </div>
+ ) : area === 'Cebu Province' && district === '3rd District' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">76 principal-authored bills · 53 co-authored bills listed</p><p>Official House profile snapshot, November 25, 2026. Shared authorship is included; these figures do not count enacted laws.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HR 1439:</strong> Inquiry into recurring Cebu and Visayas grid alerts, rotational outages, generation availability, transmission and electricity costs. Filed September 9, 2026; referred to Energy September 15, 2026.</li>
+ <li><strong>HB 10668:</strong> Shared authorship of the proposed CEBECO I distribution franchise. Filed August 10, 2026; captured record lists it with Rules.</li>
+ <li><strong>HB 10982:</strong> Restrictions on online gambling promotion, identity verification and treatment support. Filed August 26, 2026; referred to Games and Amusements September 1, 2026.</li>
+ <li><strong>HB 10473:</strong> Consumer safeguards against misleading environmental claims. Filed August 3, 2026; referred to Trade and Industry August 4, 2026.</li>
+ <li><strong>HB 9911:</strong> Proposed PRC offsite service center in Pinamungajan; measure recommitted August 12, 2026.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3>
+ <ul className="list-disc pl-5 space-y-1"><li>What findings and follow-up actions result from the grid inquiry?</li><li>What measurable affordability and reliability safeguards accompany the proposed CEBECO I franchise?</li><li>What funding and implementation milestones are available for the proposed PRC center?</li></ul>
+ <p>Individual voting records, enacted-law totals, committee memberships, family history and district expenditure remain under verification. Bill statuses are dated records, not guarantees of current status.</p>
+ <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/house-members/view/L036" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
+ <a className="block text-blue-700 underline" href="https://bills.juris.ph/authors/house?author=GARCIA%2C+KAREN+HOPE+F." target="_blank" rel="noopener noreferrer">BatasWatch captured legislative records — secondary source</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
