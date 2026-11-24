@@ -696,6 +696,17 @@ function DalagueteProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>What is the cost and revised completion date of the bulk water project?</li><li>What safeguards protect unused construction materials?</li><li>Are procurement records and infrastructure completion reports available?</li><li>What corrective actions followed the provincial audit?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Questions do not constitute findings of wrongdoing.</div></div>;
 }
 
+function DumanjugProfile() {
+ const history = [["2025","Gun-Gun Gica","Wado Gica"],["2022","Gun-Gun Gica","Wado Gica"],["2019","Gun-Gun Gica","Wado Gica"],["2016","Gun-Gun Gica","Rainero Asentista"],["2013","Nelson Garcia","Efren Gica"],["2010","Nelson Garcia","Christopher Baricuatro"],["2007","Cesar Baricuatro","Abdon Jumao-As"],["2004","Cesar Baricuatro","Abdon Jumao-As"],["2001","Cesar Baricuatro","Abdon Jumao-As"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Dumanjug, Cebu</h4><p className="text-sm mt-2">7th Congressional District · 39,876 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><div className="bg-white border rounded-lg p-4"><p>Mayor: <strong>Gun-Gun Gica</strong> — 28,950 votes.</p><p>Vice Mayor: <strong>Erwin Wado Gica</strong> — 28,312 votes.</p></div><h5 className="font-semibold">Eight leading council candidates in 2025</h5><ul className="list-disc pl-5 text-sm">{["Arthur Famor — 23,639","Rene Asentista — 23,108","Erick Gica — 22,813","Elie Luague — 20,468","Belinda Quirante — 20,007","Cardo Condes — 19,853","Kevin Pan — 18,551","Isaac Cambalon — 18,483"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-sm">Unofficial election returns; ballot names, 100% precincts reporting May 15, 2025.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/embed/cebu/dumanjug?contest=Governor">Election results</SourceLink><SourceLink href="https://peoplaid.com/2025/05/10/dumanjug-election-2025-results-winners/">Full vote totals</SourceLink><SourceLink href="https://www.dumanjug.gov.ph/government/vice-mayor">Official vice mayor page</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Dumanjug#projects`}>View Dumanjug Budget Records</SourceLink><p className="text-xs">Project matches may not represent all allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor elected</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><SourceLink href="https://dynasties.bettergov.ph/province/cebu/dumanjug">Historical leadership records</SourceLink><p className="text-sm">Gica won four of nine mayoral elections between 2001 and 2025. All eight council candidates and the vice mayor ran unopposed under One Cebu in 2025. Recurring surnames alone do not establish family relationships.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><div className="bg-white rounded-lg border p-4"><h5 className="font-bold">Public market procurement</h5><p className="text-sm">SunStar reported on July 12, 2023 that COA questioned rounding the market project budget to ₱300 million, a difference of ₱531,712, and a winning bid exceeding the original approved budget by ₱419,712. The municipal engineer maintained that the rounding complied with law. Resolution is unverified; these figures are not established losses.</p><SourceLink href="https://www.sunstar.com.ph/cebu/local-news/dumanjug-flagged-for-rounding-off-contract-cost-of-market">Audit reporting</SourceLink></div><SourceLink href="https://www.coa.gov.ph/wpfd_file/dumanjug-annual-audit-report-2025/">2025 annual audit</SourceLink><SourceLink href="https://www.coa.gov.ph/wpfd_file/dumanjug-annual-audit-report-2024/">2024 annual audit</SourceLink></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Was the questioned public market procurement resolved?</li><li>Are bid evaluations and contract amendments publicly accessible?</li><li>Are procurement records and infrastructure completion reports available?</li><li>What independent oversight exists when all council seats are uncontested?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Questions do not constitute findings of wrongdoing.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -866,7 +877,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug";
 
             return (
               <article
@@ -952,6 +963,8 @@ export default function Government() {
                     ? <DaanbantayanProfile />
                     : lgu.name === "Dalaguete"
                     ? <DalagueteProfile />
+                    : lgu.name === "Dumanjug"
+                    ? <DumanjugProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
