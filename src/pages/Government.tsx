@@ -663,6 +663,17 @@ function ConsolacionProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>When will the command center be operational?</li><li>What was the outcome of the technical review?</li><li>Have project signboards been corrected?</li><li>How many regular posts have since been filled through merit-based hiring?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Project costs are not established losses; audit observations are not criminal convictions.</div></div>;
 }
 
+function CordovaProfile() {
+ const history = [["2025","Cesar Suan","Victor Tago III"],["2022","Cesar Suan","Victor Tago III"],["2019","Mary Therese Sitoy Cho","Ximgil Dino Sitoy"],["2016","Mary Therese Sitoy Cho","Adelino Sitoy"],["2013","Adelino Sitoy","Mary Therese Sitoy Cho"],["2010","Adelino Sitoy","Rodrigo Jumao-as"],["2007","Adelino Sitoy","Rodrigo Jumao-as"],["2004","Arleigh Jay Sitoy","Danilo Sinugbuhan"],["2001","Arleigh Jay Sitoy","Danilo Sinugbuhan"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Cordova, Cebu</h4><p className="text-sm mt-2">6th Congressional District · 13 barangays · 53,261 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><div className="bg-white border rounded-lg p-4"><p>Mayor: <strong>Cesar Enverzo Suan</strong> — 30,728 votes.</p><p>Vice Mayor: <strong>Victor Sabucido Tago III</strong> — 28,766 votes.</p></div><h5 className="font-semibold">Eight leading council candidates in 2025</h5><ul className="list-disc pl-5 text-sm">{["Jerome Lepiten — 32,045","Patric Lagon — 29,867","Nats Sitoy — 29,017","Remar Baguio — 24,132","Jet Wahing — 23,903","Liera Mae Casquejo — 21,744","Chito Bentazal — 21,466","Lemuel Pogoy — 20,431"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-sm">Unofficial election returns; all eight ran under One Cebu or LAKAS.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/embed/cebu/cordova">Election results</SourceLink><SourceLink href="https://peoplaid.com/2025/05/10/cordova-cebu-election-2025-results-winners/">Full vote totals</SourceLink><SourceLink href="https://cordova.gov.ph/home">Official municipal portal</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Cordova#projects`}>View Cordova Budget Records</SourceLink><p className="text-xs">Project matches may not represent all allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor elected</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><SourceLink href="https://scene.ph/atlas/cebu/cordova">Historical leadership records</SourceLink><p className="text-sm">Seven consecutive mayoral election winners carried the Sitoy name before 2022. Exact family relationships are not verified here.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><div className="bg-white rounded-lg border p-4"><h5 className="font-bold">2025 disaster risk reduction compliance audit</h5><p className="text-sm">Published September 22, 2026; covers required disaster risk reduction allocations and alignment of investment and financial plans with the disaster risk reduction plan. Specific adverse findings and amounts have not been verified from the full report.</p><SourceLink href="https://www.coa.gov.ph/wpfd_file/cordova-compliance-audit-report-2025/">Official COA report</SourceLink></div></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>What safeguards govern coastal development and flood mitigation?</li><li>Are disaster preparedness allocations and expenditures publicly accessible?</li><li>Are procurement records and infrastructure completion reports available?</li><li>What corrective actions, if any, followed the compliance audit?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Questions do not constitute findings of wrongdoing.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -833,7 +844,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova";
 
             return (
               <article
@@ -913,6 +924,8 @@ export default function Government() {
                     ? <CompostelaProfile />
                     : lgu.name === "Consolacion"
                     ? <ConsolacionProfile />
+                    : lgu.name === "Cordova"
+                    ? <CordovaProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
