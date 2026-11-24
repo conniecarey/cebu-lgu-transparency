@@ -293,6 +293,62 @@ function AlcoyProfile() {
   );
 }
 
+function AlegriaProfile() {
+  const elected = ["Arnold Cuevas", "Eric Echavez", "Misshelle Lim", "Orot Homecillo", "Lenie Piñez", "Joseph Redula", "Dennis Guardiario", "Junny Rodriguez"];
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-6">
+      <div className="rounded-lg bg-blue-100 p-4">
+        <h4 className="text-xl font-bold text-blue-950">Alegria, Cebu</h4>
+        <p className="text-sm text-slate-700 mt-2">7th Congressional District · 9 barangays</p>
+        <SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/alegria">Municipal profile and election results</SourceLink>
+      </div>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-3">Elected Officials</h4>
+        <p className="text-xs text-slate-500 mb-3">2025–2028 electoral term</p>
+        {[["Municipal Mayor", "Gilberto Fernandez Magallon"], ["Municipal Vice Mayor", "Verna Villordon Magallon"]].map(([role, name]) => (
+          <div key={role} className="bg-white rounded-lg border p-4 mb-3"><p className="text-xs uppercase text-slate-500">{role}</p><p className="font-bold text-slate-900">{name}</p></div>
+        ))}
+        <h5 className="font-semibold text-sm mb-2">2025 election results — leading council candidates</h5>
+        <ul className="text-sm text-slate-700 list-disc pl-5">{elected.map(name => <li key={name}>{name}</li>)}</ul>
+        <SourceLink href="https://peoplaid.com/2025/05/10/alegria-cebu-election-2025-results-winners/">2025 election results</SourceLink>
+        <p className="text-sm text-slate-700 mt-3">Jerome Rodriguez took office on June 29, 2026, following a council resignation. The election list above is historical, not a confirmed current roster.</p>
+        <SourceLink href="https://www.cebu.gov.ph/13151/gov-pam-administers-oath-of-office-to-new-alegria-councilor-jerome-rodriguez/">Official provincial announcement</SourceLink>
+      </section>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">Budgets and Government Projects</h4>
+        <SourceLink href={`${budgetUrl}?q=Alegria#projects`}>View Alegria Budget Records</SourceLink>
+        <p className="text-xs text-slate-500 mt-2">Project allocations are not necessarily actual expenditures or completed projects.</p>
+      </section>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">COA Audit and Public Documents</h4>
+        <div className="bg-white border rounded-lg p-4 mb-3">
+          <h5 className="font-bold">2025 Compliance Audit</h5>
+          <p className="text-sm text-slate-600 my-2">Review of disaster risk reduction fund allocations and alignment of investment and financial plans for 2025.</p>
+          <SourceLink href="https://www.coa.gov.ph/wpfd_file/alegria-compliance-audit-report-2025-2/">Official COA report</SourceLink>
+        </div>
+        <div className="bg-white border rounded-lg p-4 mb-3">
+          <h5 className="font-bold">Outstanding cash advances — 2025 audit</h5>
+          <p className="text-lg font-bold text-blue-950 mt-2">₱754,290.47</p>
+          <p className="text-sm text-slate-700 my-2">SunStar reported that ₱367,795.33 had remained unsettled for over ten years. Management reported demand letters, salary deductions and requests for authorized write-offs. Current recovery status requires confirmation.</p>
+          <SourceLink href="https://www.sunstar.com.ph/cebu/alegria-pressed-to-recover-p754k-in-cash-advances">SunStar, October 11, 2026</SourceLink>
+        </div>
+        <div className="bg-white border rounded-lg p-4 mb-3">
+          <h5 className="font-bold">Historical audit observations</h5>
+          <p className="text-sm text-slate-700 my-2">2022: ₱345,000 calendar procurement questioned over delivery timing and quantity.</p>
+          <SourceLink href="https://www.mycebu.ph/article/alegria-coa-audit-2022/">MyCebu audit coverage</SourceLink>
+          <p className="text-sm text-slate-700 my-2">2013: ₱23.6 million public market project questioned over procurement advertising. The bids and awards committee acknowledged the omission.</p>
+          <SourceLink href="https://www.philstar.com/the-freeman/cebu-news/2014/07/14/1346061/coa-questions-alegrias-p236m-market-project">The Freeman, July 14, 2014</SourceLink>
+        </div>
+        <p className="text-xs text-slate-500">Media summaries are secondary sources. Audit observations do not establish criminal guilt; historical findings may have been resolved.</p>
+      </section>
+      <section>
+        <h4 className="font-bold text-blue-950 mb-2">Public Accountability Questions</h4>
+        <ul className="text-sm text-slate-700 list-disc pl-5 space-y-2"><li>How much of the outstanding cash advances has been recovered or liquidated?</li><li>Which audit recommendations have been implemented?</li><li>Where are the current municipal budget, procurement awards and project completion reports published?</li></ul>
+      </section>
+    </div>
+  );
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -463,7 +519,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria";
 
             return (
               <article
@@ -515,6 +571,8 @@ export default function Government() {
                     ? <AlcantaraProfile />
                     : lgu.name === "Alcoy"
                     ? <AlcoyProfile />
+                    : lgu.name === "Alegria"
+                    ? <AlegriaProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
