@@ -99,6 +99,29 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/house-members/view/L079" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
  <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/legislative-documents/committee-daily-bulletin/document/1959" target="_blank" rel="noopener noreferrer">House committee bulletin — CEBECO II franchise</a>
  </div>
+ ) : area === 'Cebu Province' && district === '5th District' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">38 principal-authored bills listed · Deputy Speaker</p><p>House profile checked November 25, 2026. Bill counts are not enacted-law counts.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HB 3305:</strong> Liloan cityhood proposal; pending with Local Government.</li>
+ <li><strong>HB 3307:</strong> Hospital dialysis facilities and free treatment for indigent patients; pending with Health.</li>
+ <li><strong>HB 3309 and HB 3322:</strong> Proposed airports in San Francisco and Sogod respectively; pending with Transportation.</li>
+ <li><strong>HB 3310 → HB 11906:</strong> Tourism designation for Cebu Safari in Carmen; committee report dated November 11, 2026.</li>
+ <li><strong>HB 3311 → HB 9553:</strong> Bagacay Point lighthouse tourism proposal; House passed August 4, 2026, Senate received August 11.</li>
+ <li><strong>HB 9554:</strong> Santiago public beach tourism designation; House passed August 4, 2026, Senate received August 11.</li>
+ <li><strong>HB 3313 and HB 3314:</strong> Danao hospital upgrade and Liloan heart center proposals; pending with Health.</li>
+ <li><strong>HB 3320–3321 → HB 11709:</strong> CNU campuses in Catmon and Poro; listed with Rules November 9, 2026.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Documented political family relationships</h3>
+ <p>The April 2026 congressional policy research inventory identifies his wife Christina Garcia-Frasco as a former tourism secretary, her mother Gwendolyn Garcia as a former governor, and his cousin Aljew Frasco as Liloan mayor. Family relationships alone do not establish misconduct.</p>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3>
+ <ul className="list-disc pl-5 space-y-1"><li>What feasibility studies, environmental safeguards and funding plans support the two airport proposals?</li><li>How would tourism designations benefit residents and how would public funds be monitored?</li><li>What are the staffing, funding and implementation plans for hospital and campus proposals?</li></ul>
+ <p>Selected legislative records only. Individual votes, enacted-law totals and actual district expenditures remain under verification.</p>
+ <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/house-members/view/J036" target="_blank" rel="noopener noreferrer">Official House profile and legislative records</a>
+ <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/index.php/legis/results?congress=20&amp;oth_nos=HB09554&amp;qrytype=N&amp;signif=NL" target="_blank" rel="noopener noreferrer">House legislative record — HB 9554</a>
+ <a className="block text-blue-700 underline" href="https://cpbrd.congress.gov.ph/wp-content/uploads/2026/04/CSP-65-STATISTICAL-INVENTORY-OF-POTENTIAL-POLITICAL-DYNASTS.pdf" target="_blank" rel="noopener noreferrer">Congressional policy research inventory — page 92</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
