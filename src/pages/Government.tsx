@@ -862,6 +862,18 @@ function SanFernandoProfile() {
  <section><h4 className="font-bold text-blue-950">Information for Further Review</h4><ul className="list-disc pl-5 text-sm"><li>Updated liquidation records and development project status.</li><li>Implementation of audit recommendations and job order employment policies.</li><li>Annual municipal revenue and expenditure, historical leadership and current council roster.</li></ul></section><div className="rounded-lg border bg-white p-4 text-xs">Independent, nonpartisan civic information. Audit observations do not establish individual liability.</div></div>;
 }
 
+function SanFranciscoProfile() {
+ const council = ["Ken Capao — 24,125 (One Cebu)","Joseph Isok — 19,741 (One Cebu)","Mhel Bacus — 17,503 (Independent)","Aurelia Andrade — 16,841 (One Cebu)","Cris Gok-Ong — 15,857 (One Cebu)","Alan Arrojado — 15,222 (One Cebu)","Rey Tindoy — 14,874 (One Cebu)","Toton Maningo — 14,340 (PDP-Laban)"];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">San Francisco, Cebu</h4><p>5th Congressional District · 15 barangays · 106.93 km² · 59,236 population (2020) · 39,021 registered voters (2025)</p><SourceLink href="https://sanfranciscocamotes.gov.ph/wp-content/uploads/2024/02/LCCAP_NEW-24-26-Printed2.pdf">Municipal climate action plan</SourceLink></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials — 2025 election</h4><p>Mayor: Al Arquillano — 23,505 votes. Vice Mayor: Aly Arquillano — 22,665 votes. Both ran unopposed under One Cebu.</p><ul className="list-disc pl-5 text-sm">{council.map(n => <li key={n}>{n}</li>)}</ul><p>Unofficial returns with all precincts reporting; current roster requires confirmation.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/san-francisco">Election returns</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership</h4><p>Compiled election history (mayor / vice mayor): 2025, 2022 and 2019: Al / Aly Arquillano; 2016: Aly / Al Arquillano; 2013: Aly / Allan Arquillano; 2010: Aly / Alfredo Arquillano Jr.; 2007: Alfredo Arquillano Jr. / Allan Arquillano; 2004 and 2001: Alfredo Arquillano Jr. / Avelino Obenza. Older official proclamations and family relationships require verification.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Infrastructure and Development</h4><p>Compiled DPWH records associate 77 contracts totaling ₱939,934,153.52 with the municipality, including a 2024 Camotes Airport multipurpose facilities contract of ₱115,749,398.43. Geographic attribution for this contract is medium confidence. Contract values are not actual expenditures or proof of completion.</p><SourceLink href="https://lovethephilippines.com/lgu/0702242000-san-francisco">Compiled infrastructure records</SourceLink><SourceLink href={`${budgetUrl}?q=San%20Francisco#projects`}>View budget records</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Climate Adaptation and Water Security</h4><p>The 2016 proposal sought ₱45,484,400 from the People's Survival Fund with ₱6,166,250 in LGU counterpart funding, covering 15 barangays. These are proposed amounts, not confirmed releases.</p><SourceLink href="https://climate.gov.ph/public/ckfinder/userfiles/files/PSF/PSF%20San%20Francisco%2C%20Camotes%20-%20Project%20Proposal.pdf">Official project proposal</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Public Services</h4><p>The 2024–2026 climate action plan lists 22 public elementary schools, six public secondary schools, 15 rural health centers, one district hospital, 17 day care centers and one public tertiary school. Current operational status requires verification.</p><SourceLink href="https://sanfranciscocamotes.gov.ph/wp-content/uploads/2022/10/Citizens-Charter-HANDBOOK-of-LGU-San-Francisco.pdf">Municipal Citizen's Charter</SourceLink></section>
+ <section><h4 className="font-bold text-blue-950">Municipal Finances and Audit Records</h4><p>Detailed annual financial statements, COA observations, project completion and implementation of recommendations remain pending verification.</p><SourceLink href="https://www.coa.gov.ph/">Commission on Audit</SourceLink></section><div className="rounded-lg border bg-white p-4 text-xs">Independent, nonpartisan civic information. Figures are dated and subject to source verification.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -1032,7 +1044,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc" || lgu.name === "Medellin" || lgu.name === "Minglanilla" || lgu.name === "Moalboal" || lgu.name === "Oslob" || lgu.name === "Pilar" || lgu.name === "Pinamungajan" || lgu.name === "Poro" || lgu.name === "Ronda" || lgu.name === "Samboan" || lgu.name === "San Fernando";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc" || lgu.name === "Medellin" || lgu.name === "Minglanilla" || lgu.name === "Moalboal" || lgu.name === "Oslob" || lgu.name === "Pilar" || lgu.name === "Pinamungajan" || lgu.name === "Poro" || lgu.name === "Ronda" || lgu.name === "Samboan" || lgu.name === "San Fernando" || lgu.name === "San Francisco";
 
             return (
               <article
@@ -1148,6 +1160,8 @@ export default function Government() {
                     ? <SamboanProfile />
                     : lgu.name === "San Fernando"
                     ? <SanFernandoProfile />
+                    : lgu.name === "San Francisco"
+                    ? <SanFranciscoProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
