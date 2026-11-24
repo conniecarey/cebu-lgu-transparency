@@ -707,6 +707,17 @@ function DumanjugProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Was the questioned public market procurement resolved?</li><li>Are bid evaluations and contract amendments publicly accessible?</li><li>Are procurement records and infrastructure completion reports available?</li><li>What independent oversight exists when all council seats are uncontested?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Questions do not constitute findings of wrongdoing.</div></div>;
 }
 
+function GinatilanProfile() {
+ const history = [["2025","Roy Vincent Singco","Dean Michael Singco"],["2022","Roy Vincent Singco","Dean Michael Singco"],["2019","Dean Michael Singco","Jose Ramon Gornez"],["2016","Dean Michael Singco","Jose Ramon Gornez"],["2013","Dean Michael Singco","Jose Ramon Gornez"],["2010","Antonio Singco","Dean Michael Singco"],["2007","Dean Michael Singco","Jose Ramon Gornez"],["2004","Dean Michael Singco","Clarito Dinglasa"],["2001","Dean Michael Singco","Nicolas Jomuad"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Ginatilan, Cebu</h4><p className="text-sm mt-2">7th Congressional District · 14 barangays · 16,906 population (2020) · 12,604 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><div className="bg-white border rounded-lg p-4"><p>Mayor: <strong>Roy Vincent Pastoriza Singco</strong> — 8,390 votes.</p><p>Vice Mayor: <strong>Dean Michael Pastoriza Singco</strong> — 8,375 votes, unopposed.</p></div><h5 className="font-semibold">Eight leading council candidates in 2025</h5><ul className="list-disc pl-5 text-sm">{["Eti Joel Gornez — 8,344","Abigail Tolabing — 7,949","Karyn Duterte — 7,618","Andang Patenio — 7,089","Wilfie Singco — 6,925","Kirby Cesar Ibo — 6,425","Pearly Emia — 6,267","Jan Walter Tocao — 5,878"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-sm">Unofficial returns, 100% of precincts reporting May 15, 2025. Leadership directory as of February 2026.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/ginatilan">Election results</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><p>2025 national budget allocations: Ginatilan River revetment walls, Barangay Palanas, left and right sides, ₱100 million each. Allocations are not actual expenditures; awards and completion remain unverified.</p><SourceLink href="https://lovethephilippines.com/lgu/0702225000-ginatilan">Project records compilation</SourceLink><SourceLink href={`${budgetUrl}?q=Ginatilan#projects`}>View Ginatilan Budget Records</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><SourceLink href="https://scene.ph/atlas/cebu/ginatilan">Historical leadership records</SourceLink><p className="text-sm">All nine mayoral elections since 2001 were won by politicians surnamed Singco. Specific family relationships remain unverified.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><div className="bg-white rounded-lg border p-4"><h5 className="font-bold">2022 telephone allowances</h5><p className="text-sm">The Freeman reported July 12, 2023 that COA recommended refunds of ₱177,750 paid to 60 job order workers as telephone allowances outside contractual provisions. Resolution is unverified.</p><SourceLink href="https://qa.philstar.com/the-freeman/cebu-news/2023/07/12/2280515/coa-cuts-phone-allowance-ginatilan-jo-employees">Audit reporting</SourceLink></div><p>2019 financial statements received an unmodified audit opinion; this does not certify every transaction.</p><SourceLink href="https://ginatilancebu.appspot.com/Accounting/pdfs/Accountingpdfs.pdf">2019 auditor report</SourceLink></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Were questioned allowances refunded or resolved?</li><li>Who received the river project contracts and what is their completion status?</li><li>How are conflicts of interest managed?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Questions do not constitute findings of wrongdoing.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -877,7 +888,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan";
 
             return (
               <article
@@ -965,6 +976,8 @@ export default function Government() {
                     ? <DalagueteProfile />
                     : lgu.name === "Dumanjug"
                     ? <DumanjugProfile />
+                    : lgu.name === "Ginatilan"
+                    ? <GinatilanProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
