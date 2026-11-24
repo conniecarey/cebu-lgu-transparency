@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Services from './pages/Services';
 import Document from './pages/Document';
-import Government from './pages/Government';
+import Congress from './pages/Congress';
 import Search from './pages/Search';
 import { isMeilisearchEnabled } from './lib/meilisearch';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
@@ -21,6 +21,7 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/congress" element={<Congress />} />
               <Route path="/services/:category" element={<Services />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:category/:documentSlug" element={<Document categoryType="service" />} />
