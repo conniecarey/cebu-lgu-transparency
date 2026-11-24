@@ -558,6 +558,21 @@ function BadianProfile() {
   );
 }
 
+function BalambanProfile() {
+  const history = [["2025","Amos Cabahug","Alfie Binghay"],["2022","Ace Binghay","Alfie Binghay"],["2019","Alex Binghay","Alfie Binghay"],["2016","Ace Binghay","Rosario Binghay"],["2013","Ace Binghay","Rosario Binghay"],["2010","Ace Binghay","Rosario Binghay"],["2007","Alex Binghay","Ace Binghay"],["2004","Alex Binghay","Edmund Bendebel"],["2001","Alex Binghay","Edmund Bendebel"]];
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-6">
+      <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Balamban, Cebu</h4><p className="text-sm mt-2">3rd Congressional District · 28 barangays · 95,136 residents (2020 census) · 55,263 registered voters (2025)</p><SourceLink href="https://balambancebu.gov.ph/">Official municipal website</SourceLink></div>
+      <section className="space-y-3"><h4 className="font-bold text-blue-950">Elected Officials</h4><p className="text-sm">2025–2028 term</p><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Amos Edwin Carausos Cabahug</p></div><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Alex Francis Veloso Binghay II</p></div><h5 className="font-semibold">Eight leading council candidates in reported 2025 results</h5><ul className="list-disc pl-5 text-sm space-y-1">{["Windel Compasion — 23,204","Andres Borgonia — 21,109","Jun Lape — 20,524","Irene Jo — 20,271","William Genel — 17,479","Emong Paulin — 16,075","Eliezer Climaco — 14,691","Doc Zaldy Climaco — 14,666"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-xs text-slate-600">Unofficial election returns; final proclamation and subsequent membership changes should be checked.</p><div><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/balamban">Election results</SourceLink></div><div><SourceLink href="https://peoplaid.com/2025/05/10/balamban-election-2025-results-winners/">Council election returns</SourceLink></div><div><SourceLink href="https://www.comelec.gov.ph/php-tpls-attachments/2025NLE/COC_2025NLE/CLC2025_R7/Cebu_BALAMBAN.pdf">COMELEC candidate list</SourceLink></div><SourceLink href="https://balambancebu.gov.ph/congratulations-mayor-amos-cabahug/">Municipal election announcement</SourceLink></section>
+      <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Balamban#projects`}>View Balamban Budget Records</SourceLink><p className="text-xs text-slate-600">Project matches are not necessarily complete allocations or actual expenditures.</p></section>
+      <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><p className="text-sm">Eight consecutive mayoral elections from 2001 to 2022 were won by candidates surnamed Binghay. Family relationships are not inferred from surnames. Election records may not reflect midterm succession.</p><SourceLink href="https://scene.ph/atlas/cebu/balamban">Historical leadership and source references</SourceLink></section>
+      <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><p className="text-sm">SunStar reported on October 13, 2026 that the 2025 audit identified missing monthly reports and omitted financial statement disclosures concerning PHP 76.17 million in Typhoon Tino in-kind donations. The municipality said all donations reached affected families, distribution logs were maintained and emergency operations took priority over reporting. The municipality said it submitted the complete report to OCD on April 22. This is a reporting issue, not proof of misappropriation.</p><div><SourceLink href="https://www.sunstar.com.ph/cebu/balamban-tino-relief-goods-accounted-for">Audit reporting and municipal response</SourceLink></div><SourceLink href="https://www.coa.gov.ph/">Commission on Audit</SourceLink></section>
+      <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm space-y-1"><li>Are reconciled relief inventories and distribution summaries publicly accessible?</li><li>Have the reporting and financial disclosure gaps been resolved?</li><li>Where are project contracts, expenditure and completion records published?</li></ul></section>
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit observations do not establish criminal wrongdoing.</div>
+    </div>
+  );
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -728,7 +743,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban";
 
             return (
               <article
@@ -790,6 +805,8 @@ export default function Government() {
                     ? <AsturiasProfile />
                     : lgu.name === "Badian"
                     ? <BadianProfile />
+                    : lgu.name === "Balamban"
+                    ? <BalambanProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
