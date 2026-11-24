@@ -214,6 +214,23 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://lapulapucitygov.ph/city-officials/junard-ahong-chan" target="_blank" rel="noopener noreferrer">City government profile and committee assignments</a>
  <a className="block text-blue-700 underline" href="https://docs.congress.hrep.online/legisdocs/first_20/CR00091.pdf" target="_blank" rel="noopener noreferrer">Committee Report 91 — HB 762</a>
  </div>
+ ) : area === 'Mandaue City' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">40 principal-authored bills listed</p><p>Official House profile snapshot, November 25, 2026. Shared authorship may be included; this is not an enacted-law count.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HB 2838:</strong> Career progression system for public school teachers; referred to Basic Education and Culture on August 5, 2025.</li>
+ <li><strong>HB 2839:</strong> Government digital transition and proposed Philippine Infostructure Management Corporation; referred to Information and Communications Technology on August 5, 2025.</li>
+ <li><strong>HB 8272:</strong> Convert Eversley Childs Sanitarium and General Hospital into a medical center; referred to Health on March 9, 2026.</li>
+ <li><strong>HB 763:</strong> Airport authority board expansion, listed on her House profile; first author Junard Chan. House approved May 20, 2026; Senate received May 25.</li>
+ <li><strong>HB 7639:</strong> Proposed VECO franchise renewal; named among sponsors in Committee Report 107, submitted February 5, 2026. Sponsorship does not establish an individual roll-call vote.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3>
+ <ul className="list-disc pl-5 space-y-1"><li>What funding, staffing and patient access targets accompany the hospital upgrade?</li><li>What procurement, privacy and cybersecurity safeguards accompany the digital government proposal?</li><li>What measurable consumer protections accompany the electricity franchise renewal?</li><li>What public reporting and appointment safeguards accompany airport board expansion?</li></ul>
+ <p>Committee assignments, individual votes, political family relationships, enacted-law totals and actual district expenditures remain under verification.</p>
+ <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/index.php/house-members/view/J055" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
+ <a className="block text-blue-700 underline" href="https://docs.congress.hrep.online/legisdocs/first_20/CR00107.pdf" target="_blank" rel="noopener noreferrer">Committee Report 107 — VECO franchise</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
