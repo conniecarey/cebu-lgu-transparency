@@ -685,6 +685,17 @@ function DaanbantayanProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>How are education fund allocations distributed among schools?</li><li>Are water quality testing results publicly accessible?</li><li>Are procurement records and infrastructure completion reports available?</li><li>What corrective actions, if any, followed the compliance audit?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Questions do not constitute findings of wrongdoing.</div></div>;
 }
 
+function DalagueteProfile() {
+ const history = [["2025","Nelin Tambis","William Lagahid"],["2022","Ronald Cesante","William Lagahid"],["2019","Jeffrey Belciña","William Lagahid"],["2016","Ronald Cesante","Jeffrey Belciña"],["2013","Ronald Cesante","Jeffrey Belciña"],["2010","Ronald Cesante","Jeffrey Belciña"],["2007","Andrade Alcantara","Ronald Cesante"],["2004","Ronald Cesante","Andrade Alcantara"],["2001","Ronald Cesante","Conrada Almagro"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Dalaguete, Cebu</h4><p className="text-sm mt-2">2nd Congressional District · 48,912 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><div className="bg-white border rounded-lg p-4"><p>Mayor: <strong>Nelin Belciña Tambis</strong> — 22,933 votes.</p><p>Vice Mayor: <strong>William Ocoy Lagahid</strong> — 24,500 votes.</p></div><h5 className="font-semibold">Eight leading council candidates in 2025</h5><ul className="list-disc pl-5 text-sm">{["Coca Nicohl Bustamante — 21,927","Lowell Amaya — 21,807","Ernesto Tangpos — 20,628","Andrade Alcantara — 19,286","John Ritz Osorio — 18,965","Ricardo Villahermosa — 17,380","Kevin Belandres — 17,291","El-Joesur Survilla — 17,034"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-sm">Unofficial election returns; ballot names, 100% precincts reporting May 15, 2025.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/embed/cebu/dalaguete">Election results</SourceLink><SourceLink href="https://peoplaid.com/2025/05/10/dalaguete-election-2025-results-winners/">Full vote totals</SourceLink><SourceLink href="https://www.cebu.gov.ph/vice-governor-sangguniang-panlalawigan/">Official provincial directory</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Dalaguete#projects`}>View Dalaguete Budget Records</SourceLink><p className="text-xs">Project matches may not represent all allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor elected</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><SourceLink href="https://scene.ph/atlas/cebu/dalaguete">Historical leadership records</SourceLink><p className="text-sm">Cesante won six of nine mayoral elections between 2001 and 2025. Recurring surnames alone do not establish family relationships.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><div className="bg-white rounded-lg border p-4"><h5 className="font-bold">Provincial bulk water infrastructure</h5><p className="text-sm">SunStar reported in November 2026 that work in Dalaguete was suspended, with pipes partly installed and others in contractor storage. The wider provincial audit covered 15 idle projects worth ₱822 million collectively; this is not Dalaguete's individual project cost.</p><SourceLink href="https://www.sunstar.com.ph/cebu/15-waterworks-idle">Audit reporting</SourceLink></div></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>What is the cost and revised completion date of the bulk water project?</li><li>What safeguards protect unused construction materials?</li><li>Are procurement records and infrastructure completion reports available?</li><li>What corrective actions followed the provincial audit?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Questions do not constitute findings of wrongdoing.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -855,7 +866,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete";
 
             return (
               <article
@@ -939,6 +950,8 @@ export default function Government() {
                     ? <CordovaProfile />
                     : lgu.name === "Daanbantayan"
                     ? <DaanbantayanProfile />
+                    : lgu.name === "Dalaguete"
+                    ? <DalagueteProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
