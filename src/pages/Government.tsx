@@ -751,6 +751,17 @@ function MalabuyocProfile() {
  <section><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Were the fiesta audit recommendations implemented?</li><li>What is the current status and cost of the water project?</li><li>What were the final findings of the flood control investigation?</li><li>How does the council ensure independent oversight?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit observations and administrative cases do not establish criminal wrongdoing. Recurring surnames do not establish family relationships.</div></div>;
 }
 
+function MedellinProfile() {
+ const history = [["2025","Edwin Salimbangon","Joven Mondigo Jr."],["2022","Joven Mondigo Jr.","Juan Alfonso Lim"],["2019","Joven Mondigo Jr.","Juan Alfonso Lim"],["2016","Joven Mondigo Jr.","Lee RJ Villapez"],["2013","Ricardo Ramirez","Juan Alfonso Lim"],["2010","Ricardo Ramirez","Michael Miranda"],["2007","Ricardo Ramirez","Michael Miranda"],["2004","Manreza Lim","Ricardo Ramirez"],["2001","Manreza Lim","Ricardo Ramirez"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Medellin, Cebu</h4><p>4th Congressional District · 42,006 registered voters (2025)</p><SourceLink href="https://scene.ph/atlas/cebu/medellin">Municipal profile and leadership records</SourceLink></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><p>Mayor: Edwin Lago Salimbangon — 13,809 votes (PFP).</p><p>Vice Mayor: Joven Jumao-as Mondigo Jr. — 24,018 votes (One Cebu).</p><h5 className="font-semibold">Eight leading council candidates, 2025</h5><ul className="list-disc pl-5 text-sm">{["Miguel Salimbangon — 20,233","Paul Mondigo — 19,804","Kendrick Lim — 16,250","Harold Salimbangon — 15,567","Regene Cudiera — 14,847","Raymond Olivar — 13,973","Rondey Rodriguez — 13,062","Aljohn Lim — 12,486"].map(n => <li key={n}>{n}</li>)}</ul><p>Unofficial returns, 100% precincts reporting May 15, 2025. Council candidates represent several parties and an independent.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/embed/cebu/medellin?contest=Vice+Mayor">2025 election returns</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year,mayor,vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><p>Four individuals won nine mayoral elections. Seven of ten leading elected municipal positions in 2025 carry the surnames Salimbangon, Mondigo or Lim. Exact family relationships remain unverified.</p><SourceLink href="https://scene.ph/atlas/cebu/medellin">Historical COMELEC and DILG compilation</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA and Public Service Accountability</h4><p>Official audit records identified; specific findings and financial amounts have not been verified from the full reports.</p><SourceLink href="https://www.coa.gov.ph/wpfd_file/medellin-cebu/">Municipal solid waste management citizen participatory audit (2024 publication)</SourceLink><SourceLink href="https://www.coa.gov.ph/wpfd_file/medellin-water-district-cebu-compliance-audit-report-2025/">Water district sampling compliance audit 2025</SourceLink><SourceLink href="https://www.coa.gov.ph/wpfd_file/medellin-water-district-cebu-biennium-audit-report-2024-2025/">Water district biennium audit 2024–2025</SourceLink><p>The water district is a separate entity from the municipal government.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><p>Individual project allocations, contract awards, disbursements and completion status require verification.</p><SourceLink href={`${budgetUrl}?q=Medellin#projects`}>View Medellin Budget Records</SourceLink></section>
+ <section><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>What actions followed the solid waste audit?</li><li>Are water quality sampling results publicly accessible?</li><li>Which infrastructure contracts are complete and operational?</li><li>How are conflicts of interest disclosed and managed?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit records do not establish wrongdoing. Shared surnames do not establish kinship.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -921,7 +932,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc" || lgu.name === "Medellin";
 
             return (
               <article
@@ -1017,6 +1028,8 @@ export default function Government() {
                     ? <MadridejosProfile />
                     : lgu.name === "Malabuyoc"
                     ? <MalabuyocProfile />
+                    : lgu.name === "Medellin"
+                    ? <MedellinProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
