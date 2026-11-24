@@ -175,6 +175,29 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://econgress.gov.ph/all-representatives/?id=88&amp;views=committees" target="_blank" rel="noopener noreferrer">eCongress committee listing</a>
  <a className="block text-blue-700 underline" href="https://www.philstar.com/the-freeman/cebu-news/2026/09/01/2553220/lolypop-cutie-girlie-post-perfect-house-attendance" target="_blank" rel="noopener noreferrer">The Freeman — attendance report</a>
  </div>
+ ) : area === 'Cebu City' && district === '2nd District' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">98 principal-authored bills listed</p><p>Official House profile snapshot, November 25, 2026. Shared authorship may be included; this is not an enacted-law count.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HB 538:</strong> Proposed Kidney Institute of Cebu; pending with Health since July 29, 2025.</li>
+ <li><strong>HB 539:</strong> Proposed higher compensation and benefits for public social workers.</li>
+ <li><strong>HB 803:</strong> Financial literacy in K–12 education; committee referral.</li>
+ <li><strong>HB 804:</strong> National road conversion of F. Vestil Road; committee referral.</li>
+ <li><strong>HB 805:</strong> Bicycle rights and cycling infrastructure; committee referral.</li>
+ <li><strong>HB 3937:</strong> Coordinated Metro Cebu drainage and flood mitigation plan; pending with Public Works and Highways since August 27, 2025.</li>
+ <li><strong>HB 4705 → HB 7639:</strong> Proposed 25-year VECO franchise renewal; House agreed to Senate amendments September 30, 2026. Final enactment not established here.</li>
+ <li><strong>HB 10853 → HB 11841:</strong> Proposed changes to recovery and presentation of electricity system-loss costs; substitute listed with Rules November 10, 2026. Removing a separate billing component does not necessarily eliminate the cost.</li>
+ <li><strong>HB 10854:</strong> Proposed metropolitan water resources management board.</li>
+ <li><strong>HB 11262:</strong> Five additional RTC branches in Cebu City; pending with Justice since September 16, 2026.</li>
+ <li><strong>HB 11490:</strong> Stronger patient protections against detention for unpaid hospital bills; pending with Health since September 30, 2026.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Congressional responsibilities</h3><p>The official House listing identifies Rama as Deputy Majority Leader on Rules and vice-chairperson of Dangerous Drugs, Local Government and Public Accounts. Other listed memberships include Accounts, Banks and Financial Intermediaries, Basic Education and Culture, Higher and Technical Education, Information and Communications Technology, MSME Development, Revision of Laws and Visayas Development.</p>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3><ul className="list-disc pl-5 space-y-1"><li>What enforceable service and affordability safeguards accompany the electricity franchise proposal?</li><li>Would the proposed system-loss reform reduce total consumer bills or change how costs are recovered?</li><li>What funding, measurable targets and public project disclosures would accompany the flood mitigation plan?</li><li>What staffing and funding are proposed for the kidney institute and additional courts?</li></ul>
+ <p>Individual roll-call votes, political family history, enacted-law totals and actual district expenditures remain under verification.</p>
+ <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/house-members/view/K068" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
+ <a className="block text-blue-700 underline" href="https://congress.gov.ph/index.php/house-members/view/K068" target="_blank" rel="noopener noreferrer">Official committee membership records</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
