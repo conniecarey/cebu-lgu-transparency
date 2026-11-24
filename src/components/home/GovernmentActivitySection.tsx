@@ -8,7 +8,7 @@ interface GovernmentActivitySectionProps {
 
 const sections = [
   { title: 'Explore Cebu Government', description: 'Explore all 53 LGUs, elected officials, local finances, infrastructure and audit records.', icon: Landmark, href: '/government', external: false, pending: false },
-  { title: 'Know Your Congresspeople', description: 'Explore Cebu’s 11 congressional districts, representatives, legislative records and voting history as research becomes available.', icon: Users, href: '/congress', external: false, pending: true },
+  { title: 'Know Your Congresspeople', description: 'Explore Cebu’s 11 congressional districts, representatives, legislative records and voting history as research becomes available.', icon: Users, href: '/congress', external: false, pending: false },
   { title: 'Follow the Public Budget', description: 'Explore Cebu budget allocations, infrastructure projects and public spending information.', icon: Wallet, href: 'https://cebu-city-budget-transparency.netlify.app/', external: true, pending: false },
   { title: 'Know Your Politicians', description: 'Visit our national politician research portal for information about public officials and their records.', icon: ShieldCheck, href: 'https://knowyourpoliticians.netlify.app/', external: true, pending: false },
 ];
