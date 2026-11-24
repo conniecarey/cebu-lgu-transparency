@@ -839,6 +839,17 @@ function RondaProfile() {
  <section><h4 className="font-bold text-blue-950">Information for Further Review</h4><ul className="list-disc pl-5 text-sm"><li>Latest audit recommendations and implementation status.</li><li>Contract awards, disbursements and completion certificates for revetment projects.</li><li>Updated official council roster and municipal service delivery indicators.</li></ul></section><div className="rounded-lg border bg-white p-4 text-xs">Independent civic research. Historical observations do not establish present-day conditions. Allocations are not actual disbursements. Unverified information is identified separately.</div></div>;
 }
 
+function SamboanProfile() {
+ const history = [["2025","Emerito Calderon Jr.","Irving Gamallo"],["2022","Emerito Calderon Jr.","Irving Gamallo"],["2019","Emerito Sy Calderon","Emerito Durano Calderon Jr."]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Samboan, Cebu</h4><p>2nd Congressional District · 15 barangays · 45.16 km² · 20,373 population (2020) · 14,612 registered voters (2025, Rappler)</p><SourceLink href="https://scene.ph/atlas/cebu/samboan">Municipal profile</SourceLink></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials — 2025 election</h4><p>Mayor: Emerito Durano Calderon Jr. — 8,156 votes.</p><p>Vice Mayor: Irving Gamallo — 11,013 votes.</p><h5 className="font-semibold">Eight leading council candidates</h5><ul className="list-disc pl-5 text-sm">{["Lito Apelanio — 7,915","Boy P. Pielago — 7,354","Marissa Jude Calderon — 7,328","Sally Bilocura — 7,100","Nonon Gerzon — 6,917","Medy Tano — 6,895","Rose Zerna — 6,469","Harris Reyes — 6,290"].map(n => <li key={n}>{n}</li>)}</ul><p>All ten leading candidates represented One Cebu. Unofficial returns, 100% precincts reporting; current council roster requires confirmation.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/samboan">Election returns</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership</h4><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year,mayor,vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table><p>Official 2019 proclamation distinguishes the two Calderon officeholders. Earlier records and family relationships require verification.</p><SourceLink href="https://www.comelec.gov.ph/php-tpls-attachments/2019NLE/ElectionResults/2019NLE_LIst_of_Elected_CityMun_Candidates.pdf">Official 2019 election record</SourceLink><SourceLink href="https://peoplaid.com/2022/05/11/samboan-election-2022-results-winners/">2022 returns</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Finances and Audit Records</h4><p>2025 annual audit published September 21, 2026. Detailed findings and financial figures have not yet been verified.</p><SourceLink href="https://www.coa.gov.ph/wpfd_file/samboan-annual-audit-report-2025/">Official COA report</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Development Projects and Public Services</h4><p>Project allocations, contract values, disbursements and completion status require verification.</p><SourceLink href={`${budgetUrl}?q=Samboan#projects`}>View Samboan Budget Records</SourceLink></section>
+ <section><h4 className="font-bold text-blue-950">Information for Further Review</h4><ul className="list-disc pl-5 text-sm"><li>Municipal financial statements and audit recommendation implementation.</li><li>Tourism revenue, water supply and public infrastructure records.</li><li>Updated official council roster and historical election records.</li></ul></section><div className="rounded-lg border bg-white p-4 text-xs">Independent civic research. Unverified information is identified separately.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -1009,7 +1020,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc" || lgu.name === "Medellin" || lgu.name === "Minglanilla" || lgu.name === "Moalboal" || lgu.name === "Oslob" || lgu.name === "Pilar" || lgu.name === "Pinamungajan" || lgu.name === "Poro" || lgu.name === "Ronda";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc" || lgu.name === "Medellin" || lgu.name === "Minglanilla" || lgu.name === "Moalboal" || lgu.name === "Oslob" || lgu.name === "Pilar" || lgu.name === "Pinamungajan" || lgu.name === "Poro" || lgu.name === "Ronda" || lgu.name === "Samboan";
 
             return (
               <article
@@ -1121,6 +1132,8 @@ export default function Government() {
                     ? <PoroProfile />
                     : lgu.name === "Ronda"
                     ? <RondaProfile />
+                    : lgu.name === "Samboan"
+                    ? <SamboanProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
