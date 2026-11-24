@@ -457,6 +457,55 @@ function ArgaoProfile() {
   );
 }
 
+function AsturiasProfile() {
+  const history = [
+    ["2025", "Dana Andrew Dumdum", "Reine Yaras"], ["2022", "Dana Andrew Dumdum", "Melvin Justin Labuca"],
+    ["2019", "Jose Antonio Pintor", "Reine Yaras"], ["2016", "Jose Antonio Pintor", "Alan Adlawan"],
+    ["2013", "Alan Adlawan", "Joel Dumdum"], ["2010", "Alan Adlawan", "Joel Dumdum"],
+    ["2007", "Alan Adlawan", "Joel Dumdum"], ["2004", "Letecia Orozco", "Alexander Agravante"],
+    ["2001", "Letecia Orozco", "Martin Antonio Segarra"]
+  ];
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-6">
+      <div className="rounded-lg bg-blue-100 p-4">
+        <h4 className="text-xl font-bold text-blue-950">Asturias, Cebu</h4>
+        <p className="text-sm mt-2">3rd Congressional District · 27 barangays · 55,397 residents (2020 census) · 37,684 registered voters (2025)</p>
+        <SourceLink href="https://asturiascebu.gov.ph/">Official municipal website</SourceLink>
+      </div>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Elected Officials</h4>
+        <p className="text-sm">2025–2028 term. Provincial directory and 2025 election records.</p>
+        <div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Dana Andrew Matela Dumdum</p></div>
+        <div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Reine Purisima Yaras</p></div>
+        <h5 className="font-semibold">Municipal council — eight leading candidates in reported 2025 results</h5>
+        <ul className="list-disc pl-5 text-sm space-y-1">{["Christian Cañada — 16,989", "Joel Pablo Dumdum — 15,003", "Margarita Cece — 12,929", "Martie Maravillas — 12,462", "Jose Antonio Pintor — 12,176", "John Carl Dupal-ag — 11,634", "Mark Paulus Noel — 11,602", "Ruel Derit — 11,562"].map(n => <li key={n}>{n}</li>)}</ul>
+        <p className="text-xs text-slate-600">Unofficial results with all precincts reporting as of May 15, 2025. The municipal website lists older officials; final proclamation and subsequent changes should be checked.</p>
+        <div><SourceLink href="https://www.cebu.gov.ph/vice-governor-sangguniang-panlalawigan/">Provincial directory</SourceLink></div>
+        <div><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/asturias">2025 election results</SourceLink></div>
+        <div><SourceLink href="https://pinasdex.com/visayas/central-visayas/cebu/asturias/government/">Council directory (secondary source)</SourceLink></div>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Budgets and Government Projects</h4>
+        <SourceLink href={`${budgetUrl}?q=Asturias#projects`}>View Asturias Budget Records</SourceLink>
+        <p className="text-xs text-slate-600">Matching project records do not necessarily represent all municipal allocations or actual spending.</p>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4>
+        <div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div>
+        <p className="text-xs text-slate-600">Election records may not reflect midterm succession. The surname Dumdum recurs in leadership records, but shared surnames do not establish family relationships.</p>
+        <SourceLink href="https://scene.ph/atlas/cebu/asturias">Historical leadership and source references</SourceLink>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4>
+        <p className="text-sm">2023 compliance audit on the transfer of unspent disaster risk reduction funds to a special trust fund and reversion of unused balances after five years. Listing this report does not imply an adverse finding.</p>
+        <SourceLink href="https://www.coa.gov.ph/wpfd_file/asturias-compliance-audit-report-2023/">Read official COA report</SourceLink>
+      </section>
+      <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm space-y-1"><li>What actions followed the 2023 compliance audit?</li><li>Where are project expenditure, contractor and completion records published?</li><li>Where can residents access current council membership and municipal financial reports?</li></ul></section>
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. No unverified audit amounts or family relationships are asserted.</div>
+    </div>
+  );
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -627,7 +676,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias";
 
             return (
               <article
@@ -685,6 +734,8 @@ export default function Government() {
                     ? <AloguinsanProfile />
                     : lgu.name === "Argao"
                     ? <ArgaoProfile />
+                    : lgu.name === "Asturias"
+                    ? <AsturiasProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
