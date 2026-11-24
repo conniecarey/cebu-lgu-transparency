@@ -923,6 +923,17 @@ function SibongaProfile() {
  <div className="rounded-lg border bg-white p-4 text-xs">Independent, nonpartisan civic information. Annual financial totals, family relationships, historical proclamations, project completion and audit resolutions require further verification.</div></div>;
 }
 
+function SogodProfile() {
+ const council = ["Dong Jeno Streegan — 17,225", "Arman Menchavez — 15,086", "Inday Lyn Cabahug — 13,745", "Woodrow Presillas — 13,473", "Exyl Cruz Arnado III — 13,106", "Edgar Ceniza — 12,925", "Riel Roble — 12,446", "Dean Severo Dosado — 10,952"];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Sogod, Cebu</h4><p>5th Congressional District · 18 barangays · 119.23 km² · 39,447 population (2020) · 26,198 registered voters (2025) · 4th class (2025 election profile)</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/sogod">Municipal profile</SourceLink></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials — 2025 election</h4><p>Mayor: Moonyeen Streegan (One Cebu, 16,445 votes); Thaddeus Durano Jr. (BAKUD, 5,473). Vice Mayor: Richard Streegan (One Cebu, 16,889); Wilson Tapere (BAKUD, 3,943).</p><ul className="list-disc pl-5 text-sm">{council.map(n => <li key={n}>{n} (One Cebu)</li>)}</ul><p>Unofficial COMELEC returns with all precincts reporting; current roster requires confirmation.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/sogod">Election results</SourceLink><SourceLink href="https://peoplaid.com/2025/05/10/sogod-cebu-election-2025-results-winners/">Council results</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership</h4><p>Earlier election proclamations and specific family relationships remain pending primary-source verification. Shared surnames do not establish kinship.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Budget — 2024</h4><p>The official annual budget report lists estimated appropriations of ₱33,998,727.60 for the 20% Development Fund and ₱8,937,455.77 for the local disaster risk reduction and management fund. These are budget estimates, not confirmed expenditures.</p><SourceLink href="https://sogodcebu.gov.ph/wp-content/uploads/2026/01/ANNUAL-BUDGET-REPORT-2024.pdf">Official annual budget report</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Audit Records and Infrastructure</h4><p>COA published a compliance audit management letter concerning allocation and utilization of the Special Education Fund for FY2024. Detailed observations and management responses require review of the full report. Project-specific allocations, completion and disbursements remain pending verification.</p><SourceLink href="https://www.coa.gov.ph/wpfd_file/sogod-compliance-audit-report-2024/">COA compliance audit</SourceLink><SourceLink href={`${budgetUrl}?q=Sogod#projects`}>Budget and infrastructure records</SourceLink></section>
+ <div className="rounded-lg border bg-white p-4 text-xs">Independent, nonpartisan civic information. Citizens may request actual development fund utilization, project completion reports and education fund audit responses. Budget estimates do not establish actual spending.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -1093,7 +1104,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc" || lgu.name === "Medellin" || lgu.name === "Minglanilla" || lgu.name === "Moalboal" || lgu.name === "Oslob" || lgu.name === "Pilar" || lgu.name === "Pinamungajan" || lgu.name === "Poro" || lgu.name === "Ronda" || lgu.name === "Samboan" || lgu.name === "San Fernando" || lgu.name === "San Francisco" || lgu.name === "San Remigio" || lgu.name === "Santa Fe" || lgu.name === "Santander" || lgu.name === "Sibonga";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon" || lgu.name === "Carmen" || lgu.name === "Catmon" || lgu.name === "Compostela" || lgu.name === "Consolacion" || lgu.name === "Cordova" || lgu.name === "Daanbantayan" || lgu.name === "Dalaguete" || lgu.name === "Dumanjug" || lgu.name === "Ginatilan" || lgu.name === "Liloan" || lgu.name === "Madridejos" || lgu.name === "Malabuyoc" || lgu.name === "Medellin" || lgu.name === "Minglanilla" || lgu.name === "Moalboal" || lgu.name === "Oslob" || lgu.name === "Pilar" || lgu.name === "Pinamungajan" || lgu.name === "Poro" || lgu.name === "Ronda" || lgu.name === "Samboan" || lgu.name === "San Fernando" || lgu.name === "San Francisco" || lgu.name === "San Remigio" || lgu.name === "Santa Fe" || lgu.name === "Santander" || lgu.name === "Sibonga" || lgu.name === "Sogod";
 
             return (
               <article
@@ -1219,6 +1230,8 @@ export default function Government() {
                     ? <SantanderProfile />
                     : lgu.name === "Sibonga"
                     ? <SibongaProfile />
+                    : lgu.name === "Sogod"
+                    ? <SogodProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
