@@ -573,6 +573,17 @@ function BalambanProfile() {
   );
 }
 
+function BantayanProfile() {
+ const history = [["2025","Orlando Layese","Arthur Despi"],["2022","Arthur Despi","Antonio Montemar"],["2019","Arthur Despi","Antonio Montemar"],["2016","Ian Escario","Antonio Montemar"],["2013","Ian Escario","Chad Cañares"],["2010","Ian Escario","Geralyn Cañares"],["2007","Geralyn Cañares","Dale Escario"],["2004","Geralyn Cañares","Remedios Escario"],["2001","Geralyn Cañares","Remedios Escario"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Bantayan, Cebu</h4><p className="text-sm mt-2">4th Congressional District · 25 barangays · 86,247 residents (2020 census) · 49,851 registered voters (2025)</p><SourceLink href="https://www.cebu.gov.ph/vice-governor-sangguniang-panlalawigan/">Provincial government directory</SourceLink></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Elected Officials</h4><p className="text-sm">2025–2028 term</p><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Orlando Forrosuelo Layese</p></div><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Arthur Escarro Despi</p></div><h5 className="font-semibold">Eight leading council candidates in reported 2025 results</h5><ul className="list-disc pl-5 text-sm space-y-1">{["Edwin Deldig — 20,939","Juvel Ducay — 20,778","Edgardo Layese — 20,294","Miguel Angelo Pacheco — 19,981","Dino Montemar — 19,872","Jedleonil Umbao — 19,857","Jeffrey Barretto — 18,488","Paolo Despi — 18,314"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-xs text-slate-600">Reported election returns, not certified proclamation records.</p><div><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/bantayan">Election results</SourceLink></div><SourceLink href="https://peoplaid.com/2025/05/10/bantayan-election-2025-results-winners/">Council election returns</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Bantayan#projects`}>View Bantayan Budget Records</SourceLink><p className="text-xs text-slate-600">Project matches are not necessarily complete allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><p className="text-xs">Family relationships are not inferred from surnames. Midterm succession may differ from election records.</p><SourceLink href="https://scene.ph/atlas/cebu/bantayan">Historical leadership records</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><p className="text-sm">The Freeman reported on October 20, 2026 that Bantayan utilized PHP 21 million of its PHP 74.49 million development fund in 2025, leaving PHP 53.49 million unutilized. Utilization fell from 49.68% in 2024 to 28.19% in 2025. Officials cited environmental clearances, work plans and right-of-way requirements as causes of delays. Unspent funds do not establish misappropriation.</p><div><SourceLink href="https://qa.philstar.com/cebu-news/2026/10/20/2564447/bantayans-20-percent-development-fund-utilization-drops-2819-percent-2025/amp/">2025 audit reporting</SourceLink></div><SourceLink href="https://www.coa.gov.ph/wpfd_file/bantayan-compliance-audit-report-2024/">2024 COA Special Education Fund compliance audit</SourceLink></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Which development projects were delayed?</li><li>What are their revised completion dates?</li><li>How much of the unspent balance has since been utilized?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit observations do not establish criminal wrongdoing.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -743,7 +754,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan";
 
             return (
               <article
@@ -807,6 +818,8 @@ export default function Government() {
                     ? <BadianProfile />
                     : lgu.name === "Balamban"
                     ? <BalambanProfile />
+                    : lgu.name === "Bantayan"
+                    ? <BantayanProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
