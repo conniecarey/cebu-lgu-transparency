@@ -198,6 +198,22 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/house-members/view/K068" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
  <a className="block text-blue-700 underline" href="https://congress.gov.ph/index.php/house-members/view/K068" target="_blank" rel="noopener noreferrer">Official committee membership records</a>
  </div>
+ ) : area === 'Lapu-Lapu City' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">97 principal-authored bills</p><p>House profile snapshot, November 25, 2026. Includes shared authorship; not an enacted-law count.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HB 762:</strong> Proposed annual June 17 non-working holiday for the city charter anniversary. House approved February 18, 2026; Senate received February 19.</li>
+ <li><strong>HB 763:</strong> Expand the Mactan-Cebu International Airport Authority board. House approved May 20, 2026; Senate received May 25.</li>
+ <li><strong>HB 764:</strong> Proposed estate tax amnesty extension to June 14, 2028. Final status not established here.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Public service and committee responsibilities</h3><p>The city government profile records his mayoral service from 2019 to 2025, followed by election to Congress in 2025. It lists vice-chair positions in Tourism and Games and Amusements, and majority memberships in Accounts, Natural Resources, Public Order and Safety, and Ways and Means.</p>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3><ul className="list-disc pl-5 space-y-1"><li>How would airport board expansion improve representation and accountability, and what appointment safeguards are proposed?</li><li>What are the expected costs and benefits of the tax amnesty extension?</li><li>Which tourism and infrastructure allocations have resulted in completed projects, and where are the procurement and expenditure records?</li></ul>
+ <p>Individual roll-call votes, family relationships, enacted-law totals and actual district expenditures remain under verification.</p>
+ <a className="block text-blue-700 underline" href="https://congress.gov.ph/house-members/view/L019" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
+ <a className="block text-blue-700 underline" href="https://lapulapucitygov.ph/city-officials/junard-ahong-chan" target="_blank" rel="noopener noreferrer">City government profile and committee assignments</a>
+ <a className="block text-blue-700 underline" href="https://docs.congress.hrep.online/legisdocs/first_20/CR00091.pdf" target="_blank" rel="noopener noreferrer">Committee Report 91 — HB 762</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
