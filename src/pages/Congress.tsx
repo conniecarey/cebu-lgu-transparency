@@ -122,6 +122,27 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/index.php/legis/results?congress=20&amp;oth_nos=HB09554&amp;qrytype=N&amp;signif=NL" target="_blank" rel="noopener noreferrer">House legislative record — HB 9554</a>
  <a className="block text-blue-700 underline" href="https://cpbrd.congress.gov.ph/wp-content/uploads/2026/04/CSP-65-STATISTICAL-INVENTORY-OF-POTENTIAL-POLITICAL-DYNASTS.pdf" target="_blank" rel="noopener noreferrer">Congressional policy research inventory — page 92</a>
  </div>
+ ) : area === 'Cebu Province' && district === '6th District' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">31 principal-authored bills listed</p><p>House profile reviewed November 25, 2026. Shared authorship is included; this is not an enacted-law count.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HB 3878 → HB 11292:</strong> Additional regional trial court branch in Consolacion; House approved October 12, 2026, Senate received October 13.</li>
+ <li><strong>HB 3879:</strong> National road classification for the Cansaga–Pit-os route; pending with Public Works and Highways since August 27, 2025.</li>
+ <li><strong>HB 3881:</strong> Visayan Heritage Month proposal; pending with Visayas Development.</li>
+ <li><strong>HB 3882:</strong> Proposed Visayas School for the Arts in Consolacion; pending with Basic Education and Culture.</li>
+ <li><strong>HB 3883:</strong> LTO extension office in Cordova; pending with Transportation.</li>
+ <li><strong>HB 4802 → HB 7639:</strong> Proposed 25-year VECO franchise renewal. House agreed to Senate amendments on September 30, 2026. Final enactment not established here.</li>
+ <li><strong>HB 6905:</strong> Proposed CTU campus in Cordova; pending with Higher and Technical Education.</li>
+ <li><strong>HB 6906:</strong> Proposed Tilhaong National High School; pending with Basic Education and Culture.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Legislative collaboration</h3><p>Official bill records identify Sonny L. Lagon of Ako Bisaya as a fellow principal author on several of these proposals. Family relationships require separate verification.</p>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3>
+ <ul className="list-disc pl-5 space-y-1"><li>What enforceable affordability, reliability and consumer protection requirements are in the final VECO franchise text?</li><li>What are the road project's cost, right-of-way requirements and implementation schedule?</li><li>What funding and staffing are available for the proposed court, schools and LTO office?</li></ul>
+ <p>Individual roll-call votes, committee memberships, enacted-law totals and actual district expenditures remain under verification.</p>
+ <a className="block text-blue-700 underline" href="https://congress.gov.ph/house-members/view/K046" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
+ <a className="block text-blue-700 underline" href="https://congress.gov.ph/legislative-documents?congress=20&amp;page=8" target="_blank" rel="noopener noreferrer">House bills and resolutions — August 2025 filings</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
