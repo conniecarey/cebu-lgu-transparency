@@ -596,6 +596,17 @@ function BariliProfile() {
 }
 
 
+function BoljoonProfile() {
+ const history = [["2025","Joie Derama","Feliberta Mubarak Obaid"],["2022","Joie Derama","Ervin Villanueva"],["2019","Merlou Derama","Ervin Villanueva"],["2016","Merlou Derama","Ervin Villanueva"],["2013","Merlou Derama","Alfredo Awe"],["2010","Teresita Derama Celis","Merlou Derama"],["2007","Deogenes Derama","Merlou Derama"],["2004","Deogenes Derama","Renato Amper"],["2001","Deogenes Derama","Renato Amper"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Boljoon, Cebu</h4><p className="text-sm mt-2">2nd Congressional District · 11 barangays · 17,525 residents (2020 census) · 12,247 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Elected Officials</h4><p className="text-sm">2025–2028 term; directory as of February 2026</p><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Joie Genesse Navarro Derama</p></div><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Feliberta Fegarido Mubarak Obaid</p></div><h5 className="font-semibold">Eight leading council candidates in reported 2025 results</h5><ul className="list-disc pl-5 text-sm space-y-1">{["Genus Navarro — 6,383","Merlou Derama — 6,253","Anjo Nicanor — 5,965","Monit Fedillaga — 5,907","Marvin Ian Niere — 5,878","Darrel John Felices — 5,600","Ervin Villanueva — 5,561","Lindzey Romero — 4,998"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-xs text-slate-600">Unofficial returns as of May 15, 2025, with 100% of precincts reporting.</p><div><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/boljoon">Election results</SourceLink></div><SourceLink href="https://www.comelec.gov.ph/php-tpls-attachments/2025NLE/COC_2025NLE/CLC2025_R7/Cebu_BOLJOON.pdf">Official candidate list</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Boljoon#projects`}>View Boljoon Budget Records</SourceLink><p className="text-xs text-slate-600">Project matches are not necessarily complete allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><p className="text-xs">Family relationships are not inferred from names. Midterm succession may differ from election records.</p><SourceLink href="https://scene.ph/atlas/cebu/boljoon">Historical leadership records</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><p className="text-sm">SunStar reported in November 2026 that auditors observed two unfinished water tanks, an incomplete treatment plant and rusting reinforcement in Boljoon. The PHP 822 million figure in the report covers 15 provincial projects, not Boljoon alone. The local project cost and subsequent status have not been verified.</p><div><SourceLink href="https://www.sunstar.com.ph/cebu/15-waterworks-idle">Water project audit reporting</SourceLink></div><SourceLink href="https://www.coa.gov.ph/">Commission on Audit</SourceLink></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>What is the project cost and who is the contractor?</li><li>What is the original completion deadline?</li><li>What corrective actions are planned and when will the facilities operate?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit observations do not establish criminal wrongdoing.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -766,7 +777,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon";
 
             return (
               <article
@@ -834,6 +845,8 @@ export default function Government() {
                     ? <BantayanProfile />
                     : lgu.name === "Barili"
                     ? <BariliProfile />
+                    : lgu.name === "Boljoon"
+                    ? <BoljoonProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
