@@ -45,6 +45,25 @@ export default function Congress() {
  <a className="block text-blue-700 underline" href="https://www.congress.gov.ph/legis/results?congress=20&amp;oth_nos=HB10214&amp;qrytype=N&amp;signif=NL" target="_blank" rel="noopener noreferrer">HB 10214 legislative record</a>
  <a className="block text-blue-700 underline" href="https://ldr.senate.gov.ph/congress-author/gullas-rhea-mae" target="_blank" rel="noopener noreferrer">Senate legislative reference — previous Congress</a>
  </div>
+  ) : area === 'Cebu Province' && district === '2nd District' ? (
+ <div className="space-y-4">
+ <div className="rounded-lg bg-blue-50 p-4"><p className="font-semibold text-blue-950">77 principal-authored bills listed</p><p>Official House profile snapshot, November 25, 2026. This listing can include shared authorship and does not count enacted laws.</p></div>
+ <h3 className="font-bold text-blue-950">Selected legislative measures — 20th Congress</h3>
+ <ul className="list-disc pl-5 space-y-2">
+ <li><strong>HB 3513:</strong> Proposed TESDA training and assessment center in Boljoon. Filed August 12, 2025; committee approval February 24, 2026.</li>
+ <li><strong>HB 3514 → HB 11168:</strong> Additional Regional Trial Court branch in Dalaguete. Substitute passed the House October 12, 2026 and was received by the Senate October 13, 2026.</li>
+ <li><strong>HB 4082:</strong> Proposed regular Cebu Normal University campus in Argao. Committee approval November 18, 2025, according to the captured BatasWatch record.</li>
+ </ul>
+ <h3 className="font-bold text-blue-950">Previous Congress — selected proposals</h3>
+ <p>HB 3347 proposed converting Cebu Technological University into a university system; HB 4104 proposed a multispecies marine hatchery in Argao. These 2022 proposals do not establish enactment or completion.</p>
+ <h3 className="font-bold text-blue-950">Questions for public accountability</h3>
+ <ul className="list-disc pl-5 space-y-1"><li>What funding, staffing and implementation schedules are available for the proposed training center and university campus?</li><li>What is the subsequent legislative status of the additional court branch?</li><li>What happened to the proposed marine hatchery, and what benefits have reached local fishers?</li></ul>
+ <p>Individual roll-call votes, committee memberships, political family history and district spending remain under verification.</p>
+ <a className="block text-blue-700 underline" href="https://congress.gov.ph/house-members/view/K035" target="_blank" rel="noopener noreferrer">Official House member profile and bills</a>
+ <a className="block text-blue-700 underline" href="https://congress.gov.ph/legislative-documents?congress=20&amp;page=8" target="_blank" rel="noopener noreferrer">Official bill records — HB 3513 and HB 3514</a>
+ <a className="block text-blue-700 underline" href="https://econgress.gov.ph/house-members/?id=118&amp;views=authoredbills" target="_blank" rel="noopener noreferrer">Previous congressional records</a>
+ <a className="block text-blue-700 underline" href="https://bills.juris.ph/authors?author=GALEOS%2C+EDSEL+A." target="_blank" rel="noopener noreferrer">BatasWatch captured legislative records — secondary source</a>
+ </div>
  ) : (<p><strong>Legislative record:</strong> Individual bills, enacted laws, committee assignments and roll-call votes pending verification.</p>)}<p><strong>Historical leadership and family relationships:</strong> Pending source review.</p><p><strong>District budgets:</strong> Explore project records by locality. Allocations do not establish personal control or actual expenditures.</p><a href={house} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Official House membership directory</a><a href={journal} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">20th Congress opening journal</a><a href={budget} target="_blank" rel="noopener noreferrer" className="block text-blue-700 underline">Cebu budget transparency portal</a></div></details>)}</div>
  {filtered.length===0 && <p>No matching representatives.</p>}
  <div className="rounded-xl border bg-blue-50 p-5 text-sm text-slate-700">BetterCebu is an independent, nonpartisan citizen-led initiative. Bills filed are not necessarily enacted laws. Budget allocations are not necessarily disbursements. Missing research is not evidence of misconduct.</div>
