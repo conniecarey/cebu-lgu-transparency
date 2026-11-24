@@ -407,6 +407,56 @@ function AloguinsanProfile() {
   );
 }
 
+function ArgaoProfile() {
+  const history = [
+    ["2025", "Allan Sesaldo", "Orvi Ortega"], ["2022", "Allan Sesaldo", "Orvi Ortega"],
+    ["2019", "Allan Sesaldo", "Jessa Flores-Mier"], ["2016", "Stanley Caminero", "Allan Sesaldo"],
+    ["2013", "Edsel Galeos", "Stanley Caminero"], ["2010", "Edsel Galeos", "Stanley Caminero"],
+    ["2007", "Edsel Galeos", "Azucena Sesaldo"], ["2004", "Wilfredo Caminero", "Azucena Sesaldo"],
+    ["2001", "Wilfredo Caminero", "Azucena Sesaldo"]
+  ];
+  return (
+    <div className="border-t bg-slate-50 p-5 space-y-6">
+      <div className="rounded-lg bg-blue-100 p-4">
+        <h4 className="text-xl font-bold text-blue-950">Argao, Cebu</h4>
+        <p className="text-sm mt-2">2nd Congressional District · 45 barangays · 78,187 residents (2020 census)</p>
+      </div>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Elected Officials</h4>
+        <p className="text-sm">2025–2028 term; executive directory as of February 2026.</p>
+        <div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Allan Miñoza Sesaldo</p></div>
+        <div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor</p><p className="font-bold">Orvi Gelbolingo Ortega</p></div>
+        <p className="text-sm">District representative: Edsel Galeos</p>
+        <h5 className="font-semibold">Municipal council — eight leading candidates in reported 2025 results</h5>
+        <p className="text-xs text-slate-600">Names as reported; final proclamation and subsequent changes should be checked.</p>
+        <ul className="list-disc pl-5 text-sm space-y-1">{["Collin Rizon — 25,430", "Rhine Mamac — 24,327", "Jessa Flores-Mier — 23,479", "Bootsie Almirante — 19,717", "Medics Albero — 19,569", "Juncam Caminero — 19,143", "Jag-Lucero Bacalso — 18,260", "Vip-Choy Semilla — 17,243"].map(n => <li key={n}>{n}</li>)}</ul>
+        <SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/argao">2025 election results</SourceLink>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Budgets and Government Projects</h4>
+        <p className="font-bold text-blue-950">₱14 million in reported provincial infrastructure assistance (March 2025)</p>
+        <ul className="list-disc pl-5 text-sm space-y-1"><li>Mayor’s Office: ₱8 million</li><li>Vice Mayor and council: ₱5.1 million</li><li>Jampang, Anajao and Catang: ₱300,000 each</li></ul>
+        <p className="text-xs text-slate-600">Reported allocations, not confirmed spending or completed projects.</p>
+        <SourceLink href="https://www.philstar.com/cebu-news/2025/03/23/2430506/capitol-distributes-p97m-infrastructures-aid-2nd-district/amp/">The Freeman, March 23, 2025</SourceLink>
+        <div><SourceLink href={`${budgetUrl}?q=Argao#projects`}>View Argao Budget Records</SourceLink></div>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">Historical Leadership</h4>
+        <div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div>
+        <p className="text-xs text-slate-600">Election records may not reflect midterm succession. Shared surnames do not establish family relationships.</p>
+        <SourceLink href="https://scene.ph/atlas/cebu/argao">Historical leadership and source references</SourceLink>
+      </section>
+      <section className="space-y-3">
+        <h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4>
+        <p className="text-sm">2025 compliance audit covering disaster risk reduction fund allocations and alignment of municipal investment and financial plans. Listing this report does not imply an adverse finding.</p>
+        <SourceLink href="https://www.coa.gov.ph/wpfd_file/argao-compliance-audit-report-2025/">Read official COA report</SourceLink>
+      </section>
+      <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm space-y-1"><li>Which projects were funded by the reported infrastructure assistance?</li><li>Where are procurement, contractor and completion records published?</li><li>What actions followed the 2025 compliance audit?</li></ul></section>
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Project outcomes and family relationships require further documentary verification.</div>
+    </div>
+  );
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -577,7 +627,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao";
 
             return (
               <article
@@ -633,6 +683,8 @@ export default function Government() {
                     ? <AlegriaProfile />
                     : lgu.name === "Aloguinsan"
                     ? <AloguinsanProfile />
+                    : lgu.name === "Argao"
+                    ? <ArgaoProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
