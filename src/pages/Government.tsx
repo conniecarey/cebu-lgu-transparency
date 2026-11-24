@@ -607,6 +607,18 @@ function BoljoonProfile() {
  <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>What is the project cost and who is the contractor?</li><li>What is the original completion deadline?</li><li>What corrective actions are planned and when will the facilities operate?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Audit observations do not establish criminal wrongdoing.</div></div>;
 }
 
+function BorbonProfile() {
+ const history = [["2025","Nico Dotillos","Noel Dotillos"],["2022","Noel Dotillos","Roy Melgo"],["2019","Noel Dotillos","Roy Melgo"],["2016","Noel Dotillos","Roy Melgo"],["2013","Bernard Sepulveda","Noel Dotillos"],["2010","Bernard Sepulveda","Noel Dotillos"],["2007","Bernard Sepulveda","Neal Vergara"],["2004","Neal Vergara","Bernard Sepulveda"],["2001","Neal Vergara","Bernard Sepulveda"]];
+ return <div className="border-t bg-slate-50 p-5 space-y-6">
+ <div className="rounded-lg bg-blue-100 p-4"><h4 className="text-xl font-bold text-blue-950">Borbon, Cebu</h4><p className="text-sm mt-2">5th Congressional District · 19 barangays · 38,187 residents (2020 census) · 27,275 registered voters (2025)</p></div>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Municipal Officials</h4><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Mayor</p><p className="font-bold">Nico Villareal Dotillos</p></div><div className="bg-white border rounded-lg p-4"><p className="text-xs uppercase">Vice Mayor (reported October 2026)</p><p className="font-bold">Bernad-Gino Sepulveda</p><p className="text-sm">Succeeded Noel Dotillos following his dismissal.</p></div><h5 className="font-semibold">Eight leading council candidates in 2025 reported returns</h5><ul className="list-disc pl-5 text-sm">{["Brino Sepulveda — 13,513","Neal Vergara — 12,791","Alberto Melendres — 12,012","Reboy Dotillos — 11,767","Jean Jacque Antigua — 11,720","Fernando Larrañaga — 11,599","Raffe Tejares — 10,651","Expedito Urot — 10,511"].map(n => <li key={n}>{n}</li>)}</ul><p className="text-xs">Historical election returns, not the current council roster after succession.</p><SourceLink href="https://ph.rappler.com/elections/2025/local-race/cebu/borbon">Election results</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Budgets and Government Projects</h4><SourceLink href={`${budgetUrl}?q=Borbon#projects`}>View Borbon Budget Records</SourceLink><p className="text-xs">Project matches may not represent all allocations or actual expenditures.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Historical Leadership and Political Connections</h4><div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr><th>Election</th><th>Mayor</th><th>Vice Mayor elected</th></tr></thead><tbody>{history.map(([year, mayor, vice]) => <tr key={year} className="border-t"><td className="py-2">{year}</td><td>{mayor}</td><td>{vice}</td></tr>)}</tbody></table></div><SourceLink href="https://scene.ph/atlas/cebu/borbon">Historical leadership records</SourceLink><p className="text-sm">SunStar identifies Mayor Nico Dotillos as the son of former Vice Mayor Noel Dotillos.</p></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">Documented Administrative Case</h4><p className="text-sm">SunStar reported that an Ombudsman decision dated October 15, 2025 concerned Noel Dotillos signing consultancy contracts for his wife, Dr. Corazon Dotillos, without council authorization. The reported rate was up to PHP 3,500 per day. Sepulveda subsequently assumed office. Appeal status has not been verified.</p><SourceLink href="https://www.sunstar.com.ph/cebu/borbon-town-gets-new-vice-mayor">Read succession and administrative case reporting</SourceLink></section>
+ <section className="space-y-3"><h4 className="font-bold text-blue-950">COA Audit and Public Documents</h4><p className="text-sm">The Freeman reported in July 2022 that the 2021 audit identified PHP 357,083.99 in construction deficiencies on a roughly PHP 1.9 million access road project in Barangay Bongoyon despite full payment. Auditors recommended investigation and rectification or recovery. Subsequent resolution has not been verified.</p><SourceLink href="https://www.philstar.com/the-freeman/cebu-news/2022/07/14/2195268/coa-flags-borbon-full-payment-despite-construction-deficiencies">Read audit reporting</SourceLink><div><SourceLink href="https://www.coa.gov.ph/">Commission on Audit</SourceLink></div></section>
+ <section className="space-y-2"><h4 className="font-bold text-blue-950">Public Accountability Questions</h4><ul className="list-disc pl-5 text-sm"><li>Were the road deficiencies rectified or the amount recovered?</li><li>What is the updated municipal council roster?</li><li>What safeguards govern consultancy contracts involving relatives?</li></ul></section><div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-xs text-amber-900">Independent civic research. Administrative findings and audit observations are not criminal convictions.</div></div>;
+}
+
 function PendingProfile({ name }: { name: string }) {
   return (
     <div className="border-t bg-slate-50 p-5 space-y-5">
@@ -777,7 +789,7 @@ export default function Government() {
         <div className="grid md:grid-cols-3 gap-4 items-start">
           {filtered.map(lgu => {
             const isOpen = openLGU === lgu.name;
-            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon";
+            const isResearched = lgu.name === "Alcantara" || lgu.name === "Alcoy" || lgu.name === "Alegria" || lgu.name === "Aloguinsan" || lgu.name === "Argao" || lgu.name === "Asturias" || lgu.name === "Badian" || lgu.name === "Balamban" || lgu.name === "Bantayan" || lgu.name === "Barili" || lgu.name === "Boljoon" || lgu.name === "Borbon";
 
             return (
               <article
@@ -847,6 +859,8 @@ export default function Government() {
                     ? <BariliProfile />
                     : lgu.name === "Boljoon"
                     ? <BoljoonProfile />
+                    : lgu.name === "Borbon"
+                    ? <BorbonProfile />
                     : <PendingProfile name={lgu.name} />
                 )}
               </article>
