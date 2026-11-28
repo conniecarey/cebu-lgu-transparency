@@ -11,11 +11,12 @@ const sections = [
   { title: 'Know Your Congresspeople', description: 'Explore Cebu’s 11 congressional districts, representatives, legislative records and voting history as research becomes available.', icon: Users, href: '/congress', external: false, pending: false },
   { title: 'Follow the Public Budget', description: 'Explore Cebu budget allocations, infrastructure projects and public spending information.', icon: Wallet, href: 'https://cebu-city-budget-transparency.netlify.app/', external: true, pending: false },
   { title: 'Know Your Politicians', description: 'Visit our national politician research portal for information about public officials and their records.', icon: ShieldCheck, href: 'https://knowyourpoliticians.netlify.app/', external: true, pending: false },
+  { title: 'Explore Crime & Public Safety', description: 'Explore available Philippine crime statistics and public safety data through CrimeWatch, an independent external open-source resource.', icon: ShieldCheck, href: 'https://lnkd.in/d2efbU2z', external: true, pending: false },
 ];
 
 export default function GovernmentActivitySection({
   title = 'Explore BetterCebu',
-  description = 'Explore local government, public officials, budgets, and transparency records across Cebu.',
+  description = 'Explore local government, public officials, budgets, transparency records and public safety resources across Cebu.',
 }: GovernmentActivitySectionProps) {
   return (
     <section id="government" className="w-full bg-slate-50 py-16 px-4 sm:px-6 lg:px-8">
